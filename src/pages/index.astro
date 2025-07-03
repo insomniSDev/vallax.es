@@ -1,0 +1,24 @@
+---
+import GlobalStyles from "../components/GlobalStyles.astro";
+import Nav from "../components/Nav.astro";
+import Header from "../components/Header.astro";
+import Features from "../components/Features.astro";
+import Plans from "../components/Plans.astro";
+import Docs from "../components/Docs.astro";
+import Platforms from "../components/Platforms.astro";
+import Contact from "../components/Contact.astro";
+import Footer from "../components/Footer.astro";
+import LandingLayout from "../layouts/LandingLayout.astro";
+const currentYear = new Date().getFullYear();
+---
+
+<LandingLayout title="Vallax" description="Vallax">
+    <Nav />
+    <Header />
+    <Features />
+    <Plans />
+    <Docs />
+    <Platforms />
+    <Contact />
+    <Footer />
+</LandingLayout>

@@ -1,0 +1,74 @@
+---
+import LandingLayout from "../layouts/LandingLayout.astro";
+---
+
+<style>
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 80vh;
+        margin: 0;
+        padding: 1rem;
+        box-sizing: border-box;
+    }
+
+    .success-container {
+        max-width: 40rem;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+        padding: 2rem 1.5rem;
+    }
+
+    @media (max-width: 640px) {
+        .success-container {
+            padding: 1.5rem 1rem;
+        }
+        .section-icon {
+            margin-bottom: 1rem;
+        }
+    }
+</style>
+
+<LandingLayout>
+    <main class="w-full">
+        <div class="success-container">
+            <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="section-icon mx-auto"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+            >
+                <path d="M22 11.08V12a10 10 0 1 1-5.93-8.83"></path>
+                <polyline points="22 4 12 14.01 9 11.01"></polyline>
+            </svg>
+            <h2 class="font-display text-4xl brand-text-heading mb-4">
+                ¡Pago Confirmado!
+            </h2>
+            <p class="text-xl md:text-2xl section-text-color font-bold mb-6">
+                Tu suscripción Premium ha sido activada con éxito.
+            </p>
+            <div class="mb-4">
+                <a
+                    href="https://t.me/VallaxBot"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="cta-button font-semibold py-3 px-8 text-lg inline-block md:py-4 md:px-12"
+                >
+                    Ir a Telegram
+                </a>
+            </div>
+            <p class="text-sm section-subtext-color opacity-80">
+                Si tienes alguna duda, consulta nuestra <a
+                    href="/docs"
+                    class="accent-text hover:underline">documentación</a
+                >.
+            </p>
+        </div>
+    </main>
+</LandingLayout>

@@ -1,0 +1,72 @@
+---
+import LandingLayout from "../layouts/LandingLayout.astro";
+---
+
+<style>
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 80vh;
+        margin: 0;
+        padding: 1rem;
+        box-sizing: border-box;
+    }
+
+    .success-container {
+        max-width: 40rem;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+        padding: 2rem 1.5rem;
+    }
+
+    .icon {
+        width: 68px;
+        height: 68px;
+        color: rgba(255, 77, 79, 0.4);
+    }
+
+    @media (max-width: 640px) {
+        .success-container {
+            padding: 1.5rem 1rem;
+        }
+        .icon {
+            margin-bottom: 1rem;
+        }
+    }
+</style>
+
+<LandingLayout>
+    <main class="w-full">
+        <div class="success-container">
+            <svg
+                class="icon mx-auto mb-2"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+            >
+                <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="m9.75 9.75 4.5 4.5m0-4.5-4.5 4.5M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
+                ></path>
+            </svg>
+
+            <h2 class="font-display text-4xl text-orange-700 mb-4">Error</h2>
+
+            <p class="text-xl md:text-2xl section-text-color font-bold mb-4">
+                Algo ha ido mal procesando el pago.
+            </p>
+
+            <p class="text-sm section-subtext-color opacity-80 mt-4">
+                Por favor, inténtalo de nuevo o <a
+                    href="mailto:tuemail@ejemplo.com"
+                    class="accent-text hover:underline">contactanos</a
+                > si el problema persiste.
+            </p>
+        </div>
+    </main>
+</LandingLayout>

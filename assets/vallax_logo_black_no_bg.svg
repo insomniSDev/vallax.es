@@ -1,0 +1,12 @@
+<svg class="vallax-logo-svg" version="1.1" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+ <defs>
+  <linearGradient id="linearGradient4" x1="25" x2="75" y1="52.5" y2="52.5" gradientUnits="userSpaceOnUse">
+   <stop offset="0"/>
+  </linearGradient>
+  <linearGradient id="linearGradient6" x1="5" x2="95" y1="50" y2="50" gradientUnits="userSpaceOnUse">
+   <stop offset="0"/>
+  </linearGradient>
+ </defs>
+ <circle class="logo-circle-stroke" cx="50" cy="50" r="45" fill="none" stroke="url(#linearGradient6)" stroke-width="8.0013"/>
+ <path class="logo-v-fill" d="m25 30 25 45 25-45h-10l-15 25-15-25z" fill="url(#linearGradient4)"/>
+</svg>

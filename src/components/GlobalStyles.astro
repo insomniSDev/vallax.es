@@ -1,0 +1,373 @@
+---
+import "@fontsource-variable/orbitron";
+import "@fontsource-variable/nunito";
+---
+
+<style is:global>
+    :root {
+        --bg-deep-night: #0d1117;
+        --bg-night-sky: #161d27;
+        --bg-card-night: #1e2a3a;
+        --text-light-slate: #d0d9e4;
+        --text-medium-slate: #a8b7c9;
+
+        --accent-electric-blue: #00cfe8; /* Cyan/Electric Blue */
+        --accent-electric-blue-darker: #00a9bf; /* Darker shade for hover */
+        --accent-electric-blue-glow: rgba(0, 207, 232, 0.4); /* Glow effect */
+
+        --border-sly-blue-subtle: #2d3f53;
+        --brand-sly-blue-for-underline: #2d5a9d; /* Kept for underline structure, color will be accent */
+    }
+
+    html {
+        scroll-behavior: smooth;
+    }
+    body {
+        font-family: "Nunito Variable", sans-serif;
+        background-color: var(--bg-deep-night);
+        color: var(--text-light-slate);
+        overflow-x: hidden;
+    }
+    .font-display {
+        font-family: "Orbitron Variable", sans-serif;
+        font-weight: 900;
+        letter-spacing: 0.05em;
+    }
+    .font-heading {
+        font-family: "Nunito Variable", sans-serif;
+        font-weight: 800;
+    }
+    .hero-bg {
+        background-color: var(--bg-deep-night);
+        position: relative;
+        overflow: hidden;
+        border-bottom: 1px solid rgba(0, 207, 232, 0.15); /* Accent border */
+    }
+    .hero-content {
+        position: relative;
+        z-index: 1;
+    }
+
+    .brand-text-heading {
+        color: var(--accent-electric-blue);
+        text-shadow:
+            0 0 12px var(--accent-electric-blue-glow),
+            0 0 25px var(--accent-electric-blue-glow);
+    }
+    .accent-text {
+        color: var(--accent-electric-blue);
+    }
+    .cta-button {
+        background-color: var(--accent-electric-blue);
+        color: var(--bg-deep-night);
+        border-radius: 9999px;
+        transition:
+            background-color 0.3s ease,
+            transform 0.2s ease,
+            box-shadow 0.3s ease;
+        box-shadow: 0 5px 18px var(--accent-electric-blue-glow);
+        padding-top: 0.9rem;
+        padding-bottom: 0.9rem;
+        font-weight: 700;
+    }
+    .cta-button:hover {
+        background-color: var(--accent-electric-blue-darker);
+        transform: translateY(-4px) scale(1.04);
+        box-shadow: 0 8px 25px rgba(0, 207, 232, 0.6);
+    }
+    .secondary-cta-button {
+        background-color: transparent;
+        color: var(--accent-electric-blue);
+        border: 2px solid var(--accent-electric-blue);
+        border-radius: 9999px;
+        transition:
+            background-color 0.3s ease,
+            color 0.3s ease,
+            transform 0.2s ease,
+            box-shadow 0.3s ease;
+        font-weight: 600;
+    }
+    .secondary-cta-button:hover {
+        background-color: var(--accent-electric-blue);
+        color: var(--bg-deep-night);
+        transform: translateY(-3px);
+        box-shadow: 0 6px 15px var(--accent-electric-blue-glow);
+    }
+
+    .section-icon {
+        width: 48px;
+        height: 48px;
+        margin-bottom: 1rem;
+        color: var(--accent-electric-blue);
+    }
+
+    .card-bg {
+        background-color: var(--bg-card-night);
+        border: 1px solid var(--border-sly-blue-subtle);
+        padding: 1.75rem;
+        border-radius: 16px;
+        box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+        transition:
+            border-color 0.3s ease,
+            transform 0.3s ease,
+            box-shadow 0.3s ease;
+    }
+    .card-bg:hover {
+        border-color: var(--accent-electric-blue);
+        box-shadow:
+            0 10px 30px rgba(0, 207, 232, 0.1),
+            0 0 15px rgba(0, 207, 232, 0.1);
+        transform: translateY(-5px);
+    }
+
+    .plan-card {
+        background-color: var(--bg-card-night);
+        border: 1px solid var(--border-sly-blue-subtle);
+        padding: 2rem;
+        border-radius: 16px;
+        box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+        transition:
+            transform 0.3s ease,
+            box-shadow 0.3s ease,
+            border-color 0.3s ease;
+        display: flex;
+        flex-direction: column;
+    }
+    .plan-card:hover {
+        transform: translateY(-7px);
+        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+        border-color: var(--accent-electric-blue);
+    }
+
+    .plan-card-premium {
+        border: 3px solid var(--accent-electric-blue);
+        box-shadow:
+            0 0 30px var(--accent-electric-blue-glow),
+            0 10px 30px rgba(0, 0, 0, 0.4),
+            inset 0 0 20px rgba(0, 207, 232, 0.05);
+        transform: scale(1.03);
+    }
+    .plan-card-premium:hover {
+        border-color: var(--accent-electric-blue-darker);
+        box-shadow:
+            0 0 40px rgba(0, 207, 232, 0.5),
+            0 12px 35px rgba(0, 0, 0, 0.45),
+            inset 0 0 25px rgba(0, 207, 232, 0.1);
+        transform: translateY(-10px) scale(1.05);
+    }
+    .plan-card-premium .secondary-cta-button {
+        background-color: var(--accent-electric-blue);
+        color: var(--bg-deep-night);
+        border-color: var(--accent-electric-blue);
+        box-shadow: 0 4px 15px var(--accent-electric-blue-glow);
+    }
+    .plan-card-premium .secondary-cta-button:hover {
+        background-color: var(--accent-electric-blue-darker);
+        transform: translateY(-3px) scale(1.03);
+        box-shadow: 0 7px 20px rgba(0, 207, 232, 0.5);
+    }
+    .premium-badge {
+        position: absolute;
+        top: -1px;
+        right: -1px;
+        background-color: var(--accent-electric-blue);
+        color: var(--bg-deep-night);
+        font-size: 0.75rem;
+        font-weight: 700;
+        padding: 0.25rem 0.75rem;
+        border-top-right-radius: 14px;
+        border-bottom-left-radius: 12px;
+        box-shadow: -2px 2px 8px rgba(0, 0, 0, 0.3);
+    }
+    .premium-icon {
+        width: 32px;
+        height: 32px;
+        color: var(--accent-electric-blue);
+        margin-bottom: 0.5rem;
+    }
+
+    .nav-link {
+        font-weight: 700;
+        transition:
+            color 0.3s ease,
+            text-shadow 0.3s ease;
+    }
+    .nav-link-text-color {
+        color: var(--text-medium-slate);
+    }
+    .nav-link:hover .nav-link-text-color {
+        color: var(--accent-electric-blue);
+        text-shadow: 0 0 8px var(--accent-electric-blue-glow);
+    }
+    .drawy-underline {
+        position: relative;
+        display: inline-block;
+        padding-bottom: 12px;
+    }
+    .drawy-underline::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0%;
+        width: 100%;
+        height: 3px;
+        background-color: var(--accent-electric-blue);
+        box-shadow: 0 0 8px var(--accent-electric-blue-glow);
+        border-radius: 1.5px;
+    }
+    .platform-logo-item {
+        padding: 0.5rem;
+        transition: transform 0.2s ease;
+    }
+    .platform-logo-item img {
+        transition: filter 0.3s ease;
+        filter: grayscale(50%) opacity(70%);
+    }
+    .platform-logo-item:hover img {
+        transform: scale(1.1);
+        filter: grayscale(0%) opacity(100%);
+    }
+
+    .perk-list li {
+        padding-left: 1.75em;
+        position: relative;
+        margin-bottom: 0.6em;
+    }
+    .perk-list-text-color {
+        color: var(--text-light-slate);
+    }
+    .perk-list li::before {
+        content: "⭐";
+        color: var(--accent-electric-blue);
+        position: absolute;
+        left: 0.1em;
+        font-size: 1em;
+        opacity: 0.9;
+    }
+    .section-text-color {
+        color: var(--text-light-slate);
+    }
+    .section-subtext-color {
+        color: var(--text-medium-slate);
+    }
+    .nav-bg {
+        background-color: rgba(13, 17, 23, 0.75);
+        backdrop-filter: blur(12px);
+        border-bottom: 1px solid rgba(0, 207, 232, 0.1);
+    }
+
+    .contact-section-bg {
+        background-color: var(--bg-night-sky);
+    } /* Changed from deep-night for alternation */
+    .final-cta-button {
+        background-color: var(--bg-deep-night);
+        color: var(--accent-electric-blue);
+        border: 2px solid var(--accent-electric-blue);
+        border-radius: 9999px;
+        transition:
+            background-color 0.3s ease,
+            color 0.3s ease,
+            transform 0.2s ease,
+            box-shadow 0.3s ease;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.4);
+        padding-top: 0.9rem;
+        padding-bottom: 0.9rem;
+        font-weight: 700;
+    }
+    .final-cta-button:hover {
+        background-color: var(--accent-electric-blue);
+        color: var(--bg-deep-night);
+        transform: translateY(-4px) scale(1.05);
+        box-shadow: 0 8px 25px rgba(0, 207, 232, 0.6);
+    }
+    .final-cta-text-color {
+        color: var(--text-light-slate);
+    }
+
+    .doc-list-item {
+        background-color: var(--bg-card-night);
+        padding: 1rem 1.5rem;
+        border-radius: 12px;
+        border: 1px solid var(--border-sly-blue-subtle);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        transition:
+            border-color 0.3s ease,
+            transform 0.3s ease,
+            box-shadow 0.3s ease;
+    }
+    .doc-list-item:hover {
+        border-color: var(--accent-electric-blue);
+        transform: translateX(5px);
+        box-shadow: 5px 5px 15px rgba(0, 207, 232, 0.1);
+    }
+    .doc-list-item .doc-icon {
+        width: 28px;
+        height: 28px;
+        color: var(--accent-electric-blue);
+        margin-right: 1rem;
+        flex-shrink: 0;
+    }
+    .doc-list-item-text h4 {
+        color: var(--text-light-slate);
+        margin-bottom: 0.1rem;
+    }
+    .doc-list-item-text p {
+        font-size: 0.875rem;
+    }
+    .doc-list-item .secondary-cta-button {
+        padding: 0.4rem 0.8rem;
+        font-size: 0.8rem;
+        white-space: nowrap;
+    }
+
+    .section-alternate-bg {
+        background-color: var(--bg-night-sky);
+    }
+    .section-default-bg {
+        background-color: var(--bg-deep-night);
+    }
+    .vallax-logo-svg {
+        width: 40px;
+        height: 40px;
+        filter: drop-shadow(0 0 3px var(--accent-electric-blue-glow));
+    }
+    .logo-circle-stroke {
+        stroke: var(--text-light-slate);
+        fill: transparent;
+    }
+    .logo-v-fill {
+        fill: var(--accent-electric-blue);
+    }
+
+    /* Styles for "Qué Hago" (#features) section - Varied Layout */
+    .feature-block {
+        border-radius: 16px;
+        padding: 1.5rem 0;
+        transition: transform 0.3s ease;
+    }
+    .feature-block:hover .feature-block-icon-wrapper {
+        transform: scale(1.1) rotate(-5deg);
+        box-shadow: 0 8px 25px var(--accent-electric-blue-glow);
+    }
+    .feature-block-icon-wrapper {
+        background-color: var(--bg-card-night);
+        border-radius: 12px;
+        padding: 1rem;
+        display: inline-flex;
+        box-shadow: 0 6px 15px rgba(0, 0, 0, 0.25);
+        margin-bottom: 1rem;
+        transition:
+            transform 0.3s ease,
+            box-shadow 0.3s ease;
+    }
+    .feature-block .section-icon {
+        width: 56px;
+        height: 56px;
+        margin-bottom: 0;
+    }
+    .feature-block-content h3 {
+        color: var(--accent-electric-blue);
+    }
+</style>

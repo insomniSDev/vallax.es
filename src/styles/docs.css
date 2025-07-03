@@ -1,0 +1,37 @@
+/* Dark mode colors. */
+:root {
+    --sl-color-accent-low: #161d27;
+    --sl-color-accent: #00a9bf;
+    --sl-color-accent-high: #00cfe8;
+    --sl-color-white: #d0d9e4;
+    --sl-color-gray-6: #161d27;
+    --sl-color-black: #0d1117;
+}
+
+/* Light mode colors. */
+:root[data-theme="light"] {
+    --sl-color-accent-low: #c7d6ff;
+    --sl-color-accent: #364bff;
+    --sl-color-accent-high: #182775;
+    --sl-color-white: #17181c;
+    --sl-color-gray-1: #24272f;
+    --sl-color-gray-2: #353841;
+    --sl-color-gray-3: #545861;
+    --sl-color-gray-4: #888b96;
+    --sl-color-gray-5: #c0c2c7;
+    --sl-color-gray-6: #eceef2;
+    --sl-color-gray-7: #f5f6f8;
+    --sl-color-black: #ffffff;
+}
+
+.premium-badge {
+    display: inline-block;
+    background-color: transparent;
+    color: #d4af37;
+    font-size: 0.4em;
+    font-weight: 500;
+    padding: 0.1em 0.3em;
+    border: 1px solid #d4af37;
+    border-radius: 3px;
+    text-transform: uppercase;
+}
