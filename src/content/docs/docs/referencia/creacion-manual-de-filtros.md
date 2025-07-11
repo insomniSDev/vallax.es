@@ -12,7 +12,7 @@ Esta funcionalidad requiere el plan premium
 El comando es `/cf` (de **c**rear **f**iltro) seguido de una lista de flags.
 Cada flag empieza con `-` (forma corta) o `--` (forma larga), van separados por espacios y pueden ir en cualquier orden.
 
-La omision de cualquier flag hara que se use su valor por defecto.
+La omisión de cualquier flag hará que se use su valor por defecto.
 
 ## flags
 | Flag&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Significado                                                                                     | Por defecto | Ejemplo                            |

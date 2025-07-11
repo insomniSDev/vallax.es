@@ -5,19 +5,19 @@ title: Filtros
 
 Los filtros definen las condiciones bajo las cuales Vallax debe notificarte nuevos anuncios.
 
-Se evalua cada anuncio nuevo con cada uno de tus filtros **activos**, cuando un anuncio cumple **todas** las condiciones impuestas por un filtro, te lo notifica.
+Se evalúa cada anuncio nuevo con cada uno de tus filtros **activos**, cuando un anuncio cumple **todas** las condiciones impuestas por un filtro, te lo notifica.
 
 ## Proceso Evaluación
 Proceso que sigue Vallax para decidir si un anuncio cumple con un filtro.
 
-Cada parámetro (plataforma, precio, palabras clave, ...) funciona como una condicion que el anuncio debe cumplir: si falla en una, se descarta; si las cumple todas, Vallax te lo notifica.
+Cada parámetro (plataforma, precio, palabras clave, ...) funciona como una condición que el anuncio debe cumplir: si falla en una, se descarta; si las cumple todas, Vallax te lo notifica.
 
 1. **Plataforma**: El anuncio debe pertenecer a una plataforma activada en el filtro.
     - Si el filtro no incluye la plataforma del anuncio (`Wallapop`, `Vinted`, ...), se descarta directamente.
 
 2. **Precio**: Se compara el precio del anuncio con los valores definidos en el filtro.
-    - Si se define precio minimo, el precio del anuncio debe ser **mayor o igual**.
-    - Si se define precio maximo, el precio del anuncio debe ser **menor o igual**.
+    - Si se define precio mínimo, el precio del anuncio debe ser **mayor o igual**.
+    - Si se define precio máximo, el precio del anuncio debe ser **menor o igual**.
     - Si no se cumplen estas condiciones, se descarta.
 
 4. **Categoría**: Si el filtro incluye una categoría, se aplica una validación adicional.
@@ -29,4 +29,4 @@ Cada parámetro (plataforma, precio, palabras clave, ...) funciona como una cond
 
     Se deben dar **una de estas dos condiciones**:
     - **Palabras clave**: Se comprueba en base a las reglas de las [palabras clave](/docs/referencia/palabras-clave).
-    - **Regex**: si la [expresion regular](https://es.wikipedia.org/wiki/Expresi%C3%B3n_regular) se cumple.
+    - **Regex**: si la [expresión regular](https://es.wikipedia.org/wiki/Expresi%C3%B3n_regular) se cumple.

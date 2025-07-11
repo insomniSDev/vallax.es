@@ -33,4 +33,4 @@ En el menú lateral izquierdo, donde pone "FLAVOR", selecciona **Rust**. Esto as
 
 3.  **Verifica:** La plataforma te mostrará las coincidencias. Si no se comporta como esperas, ajusta la RegEx con ayuda de la IA, mencionando siempre que es para **Rust**.
 
-> Siempre es recomendable comprobar tus RegEx en Regex101.com (o paginas similares) antes de enviárselas a Vallax.
+> Siempre es recomendable comprobar tus RegEx en Regex101.com (o páginas similares) antes de enviárselas a Vallax.
