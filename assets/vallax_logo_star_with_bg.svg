@@ -1,0 +1,27 @@
+<svg class="vallax-logo-svg" version="1.1" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+ <defs>
+  <linearGradient id="linearGradient6" x1="5" x2="95" y1="50" y2="50" gradientUnits="userSpaceOnUse">
+   <stop stop-color="#d0d9e4" offset="0"/>
+  </linearGradient>
+  <filter id="filter2" x="-.12445" y="-.12445" width="1.2489" height="1.2489" color-interpolation-filters="sRGB">
+   <feFlood flood-color="rgb(0,207,232)" flood-opacity=".4" in="SourceGraphic" result="flood"/>
+   <feGaussianBlur in="SourceGraphic" result="blur" stdDeviation="3.000000"/>
+   <feOffset dx="0.000000" dy="0.000000" in="blur" result="offset"/>
+   <feComposite in="offset" in2="flood" operator="in" result="comp1"/>
+   <feComposite in="SourceGraphic" in2="comp1" result="comp2"/>
+  </filter>
+  <filter id="filter4" x="-.39317" y="-.41208" width="1.7863" height="1.8242" color-interpolation-filters="sRGB">
+   <feFlood flood-color="rgb(0,207,232)" flood-opacity=".4" in="SourceGraphic" result="flood"/>
+   <feGaussianBlur in="SourceGraphic" result="blur" stdDeviation="3.000000"/>
+   <feOffset dx="0.000000" dy="0.000000" in="blur" result="offset"/>
+   <feComposite in="offset" in2="flood" operator="in" result="comp1"/>
+   <feComposite in="SourceGraphic" in2="comp1" result="comp2"/>
+  </filter>
+  <linearGradient id="linearGradient5" x1="25" x2="75" y1="52.5" y2="52.5" gradientTransform="translate(7.5715 -36.282)" gradientUnits="userSpaceOnUse">
+   <stop stop-color="#00cfe8" offset="0"/>
+  </linearGradient>
+ </defs>
+ <rect width="100" height="100" fill="#0d1117" stroke-width="8.0013"/>
+ <path transform="matrix(2.6331 0 0 2.6331 -54.916 -21.777)" d="m39.053 18.955a0.562 0.562 0 0 1 1.04 0l2.125 5.111a0.563 0.563 0 0 0 0.475 0.345l5.518 0.442c0.499 0.04 0.701 0.663 0.321 0.988l-4.204 3.602a0.563 0.563 0 0 0-0.182 0.557l1.285 5.385a0.562 0.562 0 0 1-0.84 0.61l-4.725-2.885a0.562 0.562 0 0 0-0.586 0l-4.725 2.886a0.562 0.562 0 0 1-0.84-0.61l1.285-5.386a0.562 0.562 0 0 0-0.182-0.557l-4.204-3.602a0.562 0.562 0 0 1 0.321-0.988l5.518-0.442a0.563 0.563 0 0 0 0.475-0.345l2.125-5.11z" fill="url(#linearGradient5)" filter="url(#filter4)" stop-color="#000000" style="-inkscape-stroke:none;font-variation-settings:normal"/>
+ <circle class="logo-circle-stroke" cx="50" cy="50" r="45" fill="none" filter="url(#filter2)" stroke="url(#linearGradient6)" stroke-width="8.0013"/>
+</svg>
