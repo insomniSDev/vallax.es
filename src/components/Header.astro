@@ -21,11 +21,22 @@
             más proximamente!
         </p>
         <a
-            href="https://t.me/VallaxBot"
-            target="_blank"
+            href="#"
+            onclick="
+                if (typeof gtag !== 'undefined') {
+                gtag('event', 'click', {
+                    event_category: 'button',
+                    event_label: 'Telegram Link'
+                });
+                }
+                setTimeout(() => {
+                window.open('https://t.me/VallaxBot', '_blank');
+                }, 200);
+                return false;
+            "
             rel="noopener noreferrer"
             class="cta-button font-semibold py-3 px-8 md:py-4 md:px-12 text-lg inline-block"
-        >
+            >
             Telegram
         </a>
         <p class="text-sm mt-5 section-subtext-color opacity-80">
