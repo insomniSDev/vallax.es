@@ -15,19 +15,12 @@ const { title, description } = Astro.props;
         <GlobalStyles />
 
         <!-- Google Analytics -->
-        <script
-            async
-            src={`https://www.googletagmanager.com/gtag/js?id=G-Q50RP5V9EY`}
-        ></script>
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-Q50RP5V9EY"></script>
         <script>
-            {
-                `
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
             gtag('config', 'G-Q50RP5V9EY');
-        `;
-            }
         </script>
     </head>
     <body class="antialiased">
