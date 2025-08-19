@@ -1,4 +1,5 @@
 ---
+import '/src/assets/css/styles.css';
 ---
 
 <!doctype html>
@@ -24,10 +25,6 @@
 
   <link rel="alternate" href="https://vallax.es/" hreflang="x-default" />
 
-  <!-- Css styles -->
-  <link rel="preload" href="src/assets/css/styles.css" as="style">
-  <link rel="stylesheet" href="src/assets/css/styles.css">
-
   <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-Q50RP5V9EY"></script>
   <script>
@@ -40,7 +37,7 @@
 <body>
 
   <slot />
-  <script src="src/main.js" defer></script>
+  <script src="/main.js" defer></script>
 
 </body>
 </html>
