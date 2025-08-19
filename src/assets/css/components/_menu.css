@@ -1,0 +1,39 @@
+.hamburger-menu-wrapper {
+  @apply
+    lg:hidden
+}
+
+.hamburger-menu {
+  @apply
+    flex
+    flex-col
+    justify-center
+    items-center
+    cursor-pointer
+    gap-1.5
+}
+
+.hamburger-bar {
+  @apply
+    bg-white
+    w-[22px]
+    h-0.5
+    duration-200
+    rounded-full
+}
+
+.hamburger-menu-wrapper.open .hamburger-bar:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 6px);
+}
+.hamburger-menu-wrapper.open .hamburger-bar:nth-child(2) {
+  opacity: 0;
+}
+.hamburger-menu-wrapper.open .hamburger-bar:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -7px);
+}
+
+.active-menu {
+  visibility: visible;
+  height: 100vh;
+  @apply duration-500
+}

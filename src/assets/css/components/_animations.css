@@ -1,0 +1,29 @@
+@keyframes pulseBorder {
+  0%, 100% { border-color: rgba(255, 255, 255, 0); }
+  50%      { border-color: rgba(255, 255, 255, 0.3); }
+}
+
+.c_ring-1 {
+  animation: pulseBorder 2s infinite ease-in-out;
+  animation-delay: 0s;
+}
+
+.c_ring-2 {
+  animation: pulseBorder 2s infinite ease-in-out;
+  animation-delay: 1s;
+}
+
+.c_ring-3 {
+  animation: pulseBorder 2s infinite ease-in-out;
+  animation-delay: 1.5s;
+}
+
+@keyframes marquee {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-marquee {
+  display: inline-flex;
+  animation: marquee 32s linear infinite;
+}

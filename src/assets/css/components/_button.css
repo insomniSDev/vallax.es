@@ -1,0 +1,157 @@
+.btn {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  @apply border border-white/15;
+}
+
+/* Ensure all button content stays above gradient layers */
+.btn > * { position: relative; z-index: 1; }
+
+/* glow to button labels */
+.btn-primary span {
+  text-shadow: 0 0 15px rgba(7, 217, 196, 0.5);
+}
+
+.btn-primary {
+  transition: box-shadow 100ms ease-in-out;
+}
+
+/* Gradient overlay layers */
+.btn-primary::before,
+.btn-primary::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none; /* Prevent blocking clicks */
+  transition: opacity 100ms ease-in-out;
+}
+
+/* Initial gradient layer (low opacity) */
+.btn-primary::before {
+  background: linear-gradient(
+    to bottom,
+    rgb(7 217 196 / 5%) 0%,
+    rgb(7 217 196 / 5%) 50%
+  ), #0C1014;
+  opacity: 1;
+}
+
+/* Hover gradient layer (stronger opacity) */
+.btn-primary::after {
+  background: linear-gradient(
+    to bottom,
+    rgb(7 217 196 / 15%) 0%,
+    rgb(7 217 196 / 5%) 50%
+  ), #0C1014;
+  opacity: 0;
+}
+
+
+/* On hover: crossfade gradients and add glow shadow */
+.btn-primary:hover::before { opacity: 0; }
+.btn-primary:hover::after  { opacity: 1; }
+.btn-primary:hover {
+  box-shadow: 0 0 10px rgba(7, 217, 196, 0.25);
+}
+
+/* ------------------------------------------------------- */
+/* ------------------ SECONDARY -------------------------- */
+/* ------------------------------------------------------- */
+
+.btn-secondary {
+  transition: box-shadow 100ms ease-in-out;
+}
+
+/* Gradient overlay layers */
+.btn-secondary::before,
+.btn-secondary::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none; /* Prevent blocking clicks */
+  transition: opacity 100ms ease-in-out;
+}
+
+/* Initial gradient layer (low opacity) */
+.btn-secondary::before {
+  background: linear-gradient(
+    to bottom,
+    rgb(255 255 255 / 5%) 0%,
+    rgb(255 255 255 / 5%) 50%
+  );
+  opacity: 1;
+}
+
+/* Hover gradient layer (stronger opacity) */
+.btn-secondary::after {
+  background: linear-gradient(
+    to bottom,
+    rgb(255 255 255 / 15%) 0%,
+    rgb(255 255 255 / 5%) 50%
+  );
+  opacity: 0;
+}
+
+/* On hover: crossfade gradients and add glow shadow */
+.btn-secondary:hover::before { opacity: 0; }
+.btn-secondary:hover::after  { opacity: 1; }
+.btn-secondary:hover {
+  /* box-shadow: 0 0 25px rgba(255, 255, 255, 0.25); */
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.35);
+}
+
+/* ------------------------------------------------------- */
+/* ------------------ PREMIUM -------------------------- */
+/* ------------------------------------------------------- */
+/* glow to button labels */
+.btn-premium span {
+  text-shadow: 0 0 15px rgba(224, 233, 56, 0.5);
+}
+
+.btn-premium {
+  transition: box-shadow 100ms ease-in-out;
+}
+
+/* Gradient overlay layers */
+.btn-premium::before,
+.btn-premium::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none; /* Prevent blocking clicks */
+  transition: opacity 100ms ease-in-out;
+}
+
+/* Initial gradient layer (low opacity) */
+.btn-premium::before {
+  background: linear-gradient(
+    to bottom,
+    rgb(224 233 56 / 5%) 0%,
+    rgb(224 233 56 / 5%) 50%
+  );
+  opacity: 1;
+}
+
+/* Hover gradient layer (stronger opacity) */
+.btn-premium::after {
+  background: linear-gradient(
+    to bottom,
+    rgb(224 233 56 / 15%) 0%,
+    rgb(224 233 56 / 5%) 50%
+  );
+  opacity: 0;
+}
+
+/* On hover: crossfade gradients and add glow shadow */
+.btn-premium:hover::before { opacity: 0; }
+.btn-premium:hover::after  { opacity: 1; }
+.btn-premium:hover {
+  box-shadow: 0 0 10px rgba(224, 233, 56, 0.25);
+}
+
