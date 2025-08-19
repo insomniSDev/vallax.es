@@ -1,0 +1,6 @@
+html {
+  @apply bg-aux1
+}
+body {
+  @apply antialiased font-manrope text-base text-white;
+}

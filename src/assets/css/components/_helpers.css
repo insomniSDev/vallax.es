@@ -1,0 +1,97 @@
+.navbar-bg {
+  background: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0.05) 0%,
+    rgba(255, 255, 255, 0) 50%,
+    rgba(255, 255, 255, 0.05) 99%,
+    rgba(255, 255, 255, 0.05) 100%
+  ), #0C1014;
+}
+
+.box-shadow-aux-1 {
+  box-shadow: 0 0 5px rgba(234, 38, 122, 0.5);
+}
+.box-shadow-aux-2 {
+  box-shadow: 0 0 10px rgba(234, 38, 122, 0.5);
+}
+.box-shadow-aux-3 {
+  box-shadow: 0 0 20px rgba(234, 38, 122, 0.25);
+}
+.box-shadow-aux-4 {
+  box-shadow: 0 0 20px rgba(224, 233, 56, 0.25);
+}
+.box-shadow-aux-5 {
+  box-shadow: 0 0 20px rgba(7, 217, 196, 0.25);
+}
+
+.text-shadow-aux-1 {
+  text-shadow: 0 0 10px rgba(234, 38, 122, 0.75);
+}
+.text-shadow-aux-2 {
+  text-shadow: 0 0 10px rgba(224, 233, 56, 0.75);
+}
+.text-shadow-aux-3 {
+  text-shadow: 0 0 10px rgba(7, 217, 196, 0.75);
+}
+.text-shadow-aux-4 {
+  text-shadow: 0 0 15px rgba(255, 255, 255, 0.50);
+}
+
+.linear-bg-aux-1 {
+  background: linear-gradient(
+    to bottom,
+    rgba(12, 16, 20, 0) 0%,
+    rgba(12, 16, 20, 1) 100%
+  );
+}
+.linear-bg-aux-2 {
+  background: linear-gradient(
+    to right,
+    rgba(7, 217, 196, 0.05) 0%,
+    rgba(7, 217, 196, 0) 50%,
+    rgba(7, 217, 196, 0.05) 100%
+  );
+}
+.linear-bg-aux-3 {
+  background: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.05) 100%
+  );
+}
+.linear-bg-aux-4 {
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.05) 100%
+  );
+}
+.linear-bg-aux-5 {
+  background: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0.05) 0%,
+    rgba(255, 255, 255, 0) 75%
+  );
+}
+.linear-bg-aux-6 {
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0.05) 0%,
+    rgba(255, 255, 255, 0) 100%
+  );
+}
+.linear-bg-aux-7 {
+  background: linear-gradient(
+    to bottom,
+    rgba(7, 217, 196, 0.05) 0%,
+    rgba(7, 217, 196, 0) 100%
+  );
+}
+.linear-bg-aux-8 {
+  background: linear-gradient(
+    to right,
+    rgba(7, 217, 196, 0.05) 0%,
+    rgba(7, 217, 196, 0) 50%,
+    rgba(7, 217, 196, 0.05) 100%
+  );
+}

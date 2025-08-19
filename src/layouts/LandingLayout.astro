@@ -1,29 +1,46 @@
 ---
-import "../styles/global.css";
-import GlobalStyles from "../components/GlobalStyles.astro";
-
-const { title, description } = Astro.props;
 ---
 
 <!doctype html>
-<html lang="es">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>{title}</title>
-        <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
-        <GlobalStyles />
+<html lang="en">
+<head>
+  <!-- Charset & Viewport -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-        <!-- Google Analytics -->
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-Q50RP5V9EY"></script>
-        <script>
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', 'G-Q50RP5V9EY');
-        </script>
-    </head>
-    <body class="antialiased">
-        <slot />
-    </body>
+  <title>Vallax | Alertas Personalizadas para Productos en Wallapop y Vinted</title>
+  <meta name="description" content="Vallax te avisa al instante con alertas personalizadas en Wallapop y Vinted. Encuentra antes que nadie los productos que buscas. Ya sea para comprar o vender, Vallax es tu solución." />
+
+  <meta name="robots" content="index,follow,max-image-preview:large" />
+  <meta name="googlebot" content="index,follow" />
+
+  <!-- Favicons & PWA -->
+  <link rel="icon" type="image/svg+xml" href="/logo.svg" />
+  <meta name="theme-color" content="#07D9C4" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap" rel="stylesheet">
+
+  <link rel="alternate" href="https://vallax.es/" hreflang="x-default" />
+
+  <!-- Css styles -->
+  <link rel="preload" href="src/assets/css/styles.css" as="style">
+  <link rel="stylesheet" href="src/assets/css/styles.css">
+
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-Q50RP5V9EY"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-Q50RP5V9EY');
+  </script>
+</head>
+<body>
+
+  <slot />
+  <script src="src/main.js" defer></script>
+
+</body>
 </html>
