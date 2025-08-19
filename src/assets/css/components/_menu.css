@@ -34,6 +34,6 @@
 
 .active-menu {
   visibility: visible;
-  height: 100vh;
+  height: 234px !important;
   @apply duration-500
 }

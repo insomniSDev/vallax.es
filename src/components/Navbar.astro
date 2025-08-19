@@ -3,7 +3,7 @@
 
 <div class="max-w-[1728px] w-full">
   <!-- navbar [wrapper] -->
-  <div class="fixed top-0 left-0 w-full z-20 flex py-[30px] px-[3%] lg:gap-2.5 lg:px-[5%]">
+  <div class="fixed top-0 left-0 w-full z-50 flex py-[30px] px-[3%] lg:gap-2.5 lg:px-[5%]">
     <!-- navbar [content] -->
     <div class="navbar-bg flex justify-between lg:justify-start items-center gap-5 xl:gap-8 2xl:gap-[75px] grow py-6 px-[26px] lg:py-[16px] lg:px-10 border border-white/15">
       <div>
@@ -57,8 +57,14 @@
   </div>
 
   <!-- [BACKDROP] -->
-  <div id="menu-backdrop" class="bg-white invisible h-0 z-20">
-    <span class="text-aux1">this is the menu</span>
+  <div id="menu-backdrop" class="fixed top-0 left-0 z-40 backdrop-blur-sm h-screen w-full hidden"></div>
+  <!-- [MENU] -->
+  <div id="menu-content" class="px-[3%] invisible z-50 h-0 fixed top-[135px] left-0 w-full">
+    <div class="linear-bg-aux-9 flex flex-col gap-8 px-[26px] py-8 border border-white/15">
+      <a onclick="toggleMenu(); trackClick('vallax-nav')" href="https://t.me/vallax_group" target="_blank" class="block text-lg leading-[18px]">Comunidad</a>
+      <a onclick="toggleMenu()" href="#howitworks" class="block text-lg leading-[18px]">¿Cómo se Utiliza?</a>
+      <a onclick="toggleMenu()" href="/docs" class="block text-lg leading-[18px]">Documentación</a>
+      <a onclick="toggleMenu()" href="#pricing" class="block text-secondary text-lg leading-[18px]">Explorar Planes</a>
+    </div>
   </div>
 </div>
-
