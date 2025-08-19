@@ -1,5 +1,5 @@
 html {
-  @apply bg-aux1
+  @apply bg-aux1 scroll-smooth
 }
 body {
   @apply antialiased font-manrope text-base text-white;
