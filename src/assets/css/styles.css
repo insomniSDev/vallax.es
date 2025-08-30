@@ -4,6 +4,7 @@
 @import "./components/_menu.css";
 @import "./components/_helpers.css";
 @import "./components/_animations.css";
+@import "./components/_carousel.css";
 
 * {
   /* outline: red 1px dotted; */
