@@ -11,7 +11,7 @@ const NOTIFICATIONS = [
 ];
 ---
 
-<section class="w-full mt-20 flex flex-col items-center justify-center">
+<section class="w-full mt-20 flex flex-col">
   <div class="flex flex-col items-start gap-[30px]">
     <!-- Beta Info -->
     <div class="flex flex-col items-start">
@@ -29,14 +29,15 @@ const NOTIFICATIONS = [
     <h1 class="text-[20px] leading-[24px]">
       Vallax | Alertas Personalizadas para Productos en Wallapop y Vinted
     </h1>
-    <span class="text-[40px] leading-[40px] font-bold"
+    <span
+      class="text-[40px] leading-[40px] font-bold max-w-[750px] lg:text-[60px] lg:leading-[60px]"
       ><span class="text-secondary">ALERTAS AL INSTANTE</span> PARA QUE NUNCA PIERDAS
       UNA OPORTUNIDAD</span
     >
     <!-- Buttons  -->
-    <div class="flex flex-col w-full gap-2">
+    <div class="flex flex-col w-full gap-2 lg:flex-row">
       <!-- Two Main Button -->
-      <div class="flex leading-7">
+      <div class="flex leading-7 flex-2">
         <div
           class="bg-primary flex items-center justify-center text-bg flex-1 py-13 gap-1"
         >
@@ -61,7 +62,7 @@ const NOTIFICATIONS = [
         </div>
       </div>
       <!-- Social Media Butotn -->
-      <div class="flex flex-col items-center gap-2">
+      <div class="flex flex-col items-center gap-2 flex-1">
         <button
           class="flex gap-2 items-center blue-style w-full justify-center py-3"
         >
@@ -92,28 +93,32 @@ const NOTIFICATIONS = [
     <!--  -->
   </div>
   <!-- Movile -->
-  <div class="relative mt-15 items-center">
-    <div class="flex flex-col gap-10 items-center">
-      <div class="p-5 block border rounded-[25px] border-white/15 self-start">
-        <img src="/assets/images/logo-no-letters.png" width="30" />
-      </div>
-      <img src="/assets/images/movil.png" width="300" />
-    </div>
-    <!-- Notifications Telegram -->
+  <div class="mt-30 items-center flex justify-center">
+    <div class="relative">
+      <div class="flex flex-col gap-10 items-center">
+        <div class="p-5 block border rounded-[25px] border-white/15 self-start">
+          <img src="/assets/images/logo-no-letters.png" width="30" />
+        </div>
 
-    <div class="absolute top-20">
-      <div class="flex flex-col gap-5 items-center">
-        {
-          NOTIFICATIONS.map((notification) => {
-            return <TelegramNotification content={notification} />;
-          })
-        }
+        <img src="/assets/images/movil.png" width="300" />
       </div>
-    </div>
 
-    <div
-      class="absolute bottom-0 h-[300px] w-full bg-gradient-to-b from-bg/0 to-20% to-bg"
-    >
+      <!-- Notifications Telegram -->
+
+      <div class="absolute top-20">
+        <div class="flex flex-col gap-5 items-center">
+          {
+            NOTIFICATIONS.map((notification) => {
+              return <TelegramNotification content={notification} />;
+            })
+          }
+        </div>
+      </div>
+
+      <div
+        class="absolute bottom-0 h-[300px] w-full bg-gradient-to-b from-bg/0 to-20% to-bg"
+      >
+      </div>
     </div>
   </div>
 </section>
