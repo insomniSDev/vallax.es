@@ -1,0 +1,15 @@
+---
+import CornerButton from "../CornerButton.astro";
+
+const { content } = Astro.props;
+---
+
+<div class="flex w-full flex-grow">
+  <CornerButton color="#FFFFFF">
+    <a class="btn bg-white/5" href="">
+      <span class="text-[32px] font-semibold">/</span>
+
+      <span class="font-bold text-[20px]">{content}</span>
+    </a>
+  </CornerButton>
+</div>
