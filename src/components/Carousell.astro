@@ -1,42 +1,30 @@
 ---
----
+/** Editable items array */
+const items = [
+  "NINTENDO SWITCH OLED – €120 – COMO NUEVA – HACE 2 H",
+  "GRAND THEFT AUTO V (PS4) – €30 – COMO NUEVO – AHORA",
+  "ZAPATILLAS NIKE DUNK LOW “PANDA” – €60 – USADAS  – HACE 5 H",
+  "IPHONE 13 PRO 256GB – €380 – NUEVO PRECINTADO – AHORA",
+];
 
+// Always 3 groups: 1 original + 2 copies
+const groups = Array.from({ length: 4 });
+const textBase = "text-sm leading-[14px]";
+---
 <!-- [INFINITE CAROUSEL] -->
 <div class="mt-[140px] bg-primary/5 ">
   <div class="overflow-hidden relative opacity-75 w-full py-4">
     <div class="marquee-track flex will-change-transform whitespace-nowrap cursor-default pointer-events-none select-none">
-      <div class="marquee-group flex items-center gap-8 flex-none">
-        <span class="text-sm leading-[14px]">NINTENDO SWITCH OLED – €120 – COMO NUEVA – HACE 2 H</span>
-        <div class="bg-ternary min-h-2.5 min-w-2.5 h-2.5 w-2.5 rounded-full box-shadow-aux-1"></div>
-        <span class="text-secondary text-sm leading-[14px]">GRAND THEFT AUTO V (PS4) – €30 – COMO NUEVO – AHORA</span>
-        <div class="bg-ternary min-h-2.5 min-w-2.5 h-2.5 w-2.5 rounded-full box-shadow-aux-1"></div>
-        <span class="text-sm leading-[14px]">ZAPATILLAS NIKE DUNK LOW “PANDA” – €60 – USADAS  – HACE 5 H</span>
-        <div class="bg-ternary min-h-2.5 min-w-2.5 h-2.5 w-2.5 rounded-full box-shadow-aux-1"></div>
-        <span class="text-secondary text-sm leading-[14px]">IPHONE 13 PRO 256GB – €380 – NUEVO PRECINTADO – AHORA</span>
-        <div class="bg-ternary min-h-2.5 min-w-2.5 h-2.5 w-2.5 rounded-full box-shadow-aux-1 mr-8"></div>
-      </div>
-
-      <div class="marquee-group flex items-center gap-8 flex-none" aria-hidden="true">
-        <span class="text-sm leading-[14px]">NINTENDO SWITCH OLED – €120 – COMO NUEVA – HACE 2 H</span>
-        <div class="bg-ternary min-h-2.5 min-w-2.5 h-2.5 w-2.5 rounded-full box-shadow-aux-1"></div>
-        <span class="text-secondary text-sm leading-[14px]">GRAND THEFT AUTO V (PS4) – €30 – COMO NUEVO – AHORA</span>
-        <div class="bg-ternary min-h-2.5 min-w-2.5 h-2.5 w-2.5 rounded-full box-shadow-aux-1"></div>
-        <span class="text-sm leading-[14px]">ZAPATILLAS NIKE DUNK LOW “PANDA” – €60 – USADAS  – HACE 5 H</span>
-        <div class="bg-ternary min-h-2.5 min-w-2.5 h-2.5 w-2.5 rounded-full box-shadow-aux-1"></div>
-        <span class="text-secondary text-sm leading-[14px]">IPHONE 13 PRO 256GB – €380 – NUEVO PRECINTADO – AHORA</span>
-        <div class="bg-ternary min-h-2.5 min-w-2.5 h-2.5 w-2.5 rounded-full box-shadow-aux-1 mr-8"></div>
-      </div>
-
-      <div class="marquee-group flex items-center gap-8 flex-none" aria-hidden="true">
-        <span class="text-sm leading-[14px]">NINTENDO SWITCH OLED – €120 – COMO NUEVA – HACE 2 H</span>
-        <div class="bg-ternary min-h-2.5 min-w-2.5 h-2.5 w-2.5 rounded-full box-shadow-aux-1"></div>
-        <span class="text-secondary text-sm leading-[14px]">GRAND THEFT AUTO V (PS4) – €30 – COMO NUEVO – AHORA</span>
-        <div class="bg-ternary min-h-2.5 min-w-2.5 h-2.5 w-2.5 rounded-full box-shadow-aux-1"></div>
-        <span class="text-sm leading-[14px]">ZAPATILLAS NIKE DUNK LOW “PANDA” – €60 – USADAS  – HACE 5 H</span>
-        <div class="bg-ternary min-h-2.5 min-w-2.5 h-2.5 w-2.5 rounded-full box-shadow-aux-1"></div>
-        <span class="text-secondary text-sm leading-[14px]">IPHONE 13 PRO 256GB – €380 – NUEVO PRECINTADO – AHORA</span>
-        <div class="bg-ternary min-h-2.5 min-w-2.5 h-2.5 w-2.5 rounded-full box-shadow-aux-1 mr-8"></div>
-      </div>
+      {groups.map((_, gIdx) => (
+        <div class="marquee-group flex items-center gap-8 flex-none" aria-hidden={gIdx > 0 ? "true" : "false"}>
+          {items.map((text, i) => (
+            <>
+              <span class={`${textBase} ${i % 2 === 1 ? "text-secondary" : ""}`}>{text}</span>
+              <div class={`bg-ternary min-h-2.5 min-w-2.5 h-2.5 w-2.5 rounded-full box-shadow-aux-1 ${i === items.length - 1 ? "mr-8" : ""}`}></div>
+            </>
+          ))}
+        </div>
+      ))}
     </div>
   </div>
 </div>

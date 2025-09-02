@@ -10,7 +10,6 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/starlight": "^0.34.4",
     "@fontsource-variable/nunito": "^5.2.6",
     "@fontsource-variable/orbitron": "^5.2.6",
     "@tailwindcss/vite": "^4.1.8",
