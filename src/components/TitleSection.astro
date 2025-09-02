@@ -1,0 +1,86 @@
+---
+import { Icon } from "astro-icon/components";
+import CornerButton from "./CornerButton.astro";
+---
+
+<section class="w-full mt-20 lg:flex">
+  <div class="flex flex-col items-start gap-[30px]">
+    <!-- Beta Info -->
+    <div class="flex flex-col items-start">
+      <button
+        class="shrink-0 font-bold px-[14px] py-[8px] border-ternary/50 bg-ternary/15 border-1 box-shadow-red"
+      >
+        VERSIÓN BETA
+      </button>
+      <span class="mt-2 text-sm">
+        *Todos los usuarios gozan de funcionalidades <span
+          class="text-secondary">PREMIUM</span
+        >
+      </span>
+    </div>
+    <h1 class="text-[20px] leading-[24px]">
+      Vallax | Alertas Personalizadas para Productos en Wallapop y Vinted
+    </h1>
+    <span class="text-[40px] leading-[40px] font-bold"
+      ><span class="text-secondary">ALERTAS AL INSTANTE</span> PARA QUE NUNCA PIERDAS
+      UNA OPORTUNIDAD</span
+    >
+    <!-- Buttons  -->
+    <div class="flex flex-col w-full gap-2">
+      <!-- Two Main Button -->
+      <div class="flex leading-7">
+        <div
+          class="bg-primary flex items-center justify-center text-bg flex-1 py-13 gap-1"
+        >
+          <span class="text-[40px] font-extrabold self-start">//</span>
+          <div class="flex flex-col">
+            <span class="text-[24px] font-extrabold">+2.8 SEG</span>
+            <span class="text-[14px]s max-w-[8rem] leading-[14px]"
+              >Promedio de Respuesta</span
+            >
+          </div>
+        </div>
+        <div
+          class="bg-bg border-1 border-white/15 text-primary flex-1 items-center flex justify-center gap-1 py-13"
+        >
+          <span class="text-[40px] font-extrabold self-start">//</span>
+          <div class="flex flex-col">
+            <span class="text-[24px] font-extrabold">+25</span>
+            <span class="text-[14px]s max-w-[8rem] leading-[14px]"
+              >Categorias de Productos</span
+            >
+          </div>
+        </div>
+      </div>
+      <!-- Social Media Butotn -->
+      <div class="flex flex-col items-center gap-2">
+        <button
+          class="flex gap-2 items-center blue-style w-full justify-center py-3"
+        >
+          <Icon name={"telegram"} />
+
+          <span>Con la Tecnología de Telegram</span>
+        </button>
+
+        <CornerButton color="#FFFFFF">
+          <button
+            class="grey-style flex gap-2 items-center w-full justify-center py-3"
+          >
+            <span>/</span>
+            <span>Comunidad</span>
+          </button>
+        </CornerButton>
+        <CornerButton color="#07D9C4">
+          <button
+            class="flex gap-2 items-center bg-[#29A9EB]/5 border-[#29A9EB]/5 w-full justify-center py-3 border-1"
+          >
+            <span>/</span>
+            <span>Comenzar</span>
+          </button>
+        </CornerButton>
+      </div>
+    </div>
+
+    <!--  -->
+  </div>
+</section>

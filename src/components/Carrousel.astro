@@ -1,0 +1,28 @@
+---
+const ITEMS = [
+  "GRAND THEFT AUTO V (PS4) – €30 – COMO NUEVO – AHORA",
+  "IPHONE 13 PRO 256GB – €380 – NUEVO PRECINTADO – AHORA",
+  "NINTENDO SWITCH OLED – €250 – COMO NUEVA – AHORA",
+  "RED DEAD REDEMPTION 2 (PS4) – €25 – BUEN ESTADO – AHORA",
+  "SAMSUNG GALAXY S22 ULTRA – €500 – NUEVO PRECINTADO – AHORA",
+  "PLAYSTATION 5 – €420 – COMO NUEVA – AHORA",
+  "APPLE WATCH SERIES 8 – €280 – NUEVO – AHORA",
+  "OCULUS QUEST 2 – €200 – COMO NUEVO – AHORA",
+];
+---
+
+<div class="mt-10 w-screen bg-primary/5 overflow-hidden text-nowrap
+ p-2">
+  <div class="flex gap-15 text-[14px] w-full carrousel">
+    {
+      ITEMS.map((v, i) => {
+        return (
+          <div class="flex gap-7 items-center ">
+            <div class={`w-[10px] h-[10px] bg-ternary  rounded-full`} />
+            <span class={`${i % 2 == 0 && "text-secondary"}`}>{v}</span>
+          </div>
+        );
+      })
+    }
+  </div>
+</div>

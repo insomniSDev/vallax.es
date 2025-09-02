@@ -1,0 +1,61 @@
+---
+import { Icon } from "astro-icon/components";
+---
+
+<script>
+  const dropButton = document.getElementById("menu-button");
+
+  dropButton?.addEventListener("click", () => {
+    const dropContent = document.getElementsByClassName("dropdown-content")[0];
+
+    dropContent.classList.toggle("dropdown-content-hidden");
+  });
+</script>
+
+<nav class="w-full relative inline-block dropdown">
+  <!-- Nav-->
+  <div class="justify-between lg:justify-start flex items-center gap-3">
+    <!-- Inside-->
+
+    <div class="radiant-bg flex justify-between items-center p-[18px] w-full">
+      <div class="lg:ml-[40px] flex items-center">
+        <img src="/assets/images/logo.png" alt="logo" width="100" />
+        <!-- <Icon width={100} name="logo-letters" class={"h-[18px]"} /> -->
+
+        <div class="hidden lg:flex ml-[75px] gap-[75px] text-[14px]">
+          <a class="hover:text-primary">¿Como se Utiliza?</a>
+          <a class="hover:text-primary">Comunidad</a>
+          <a class="hover:text-primary">Documentación</a>
+
+          <a class="text-secondary">Explorar Planes</a>
+        </div>
+      </div>
+
+      <button id="menu-button" class="lg:hidden">
+        <Icon name="menu" />
+      </button>
+    </div>
+    <!--Button Start Window Screen -->
+    <button class="hidden lg:flex">
+      <div class="button-primary">
+        <span class="text-[20px]">/</span>
+        <span class="font-bold">Comenzar</span>
+      </div>
+    </button>
+  </div>
+
+  <!-- Drop-Down Mobile-->
+  <div
+    class="lg:hidden absolute dropdown-content dropdown-content-hidden radiant-bg mt-4 p-4 text-lg w-full z-1"
+  >
+    <div id="menu" class="flex flex-col gap-4">
+      <a>¿Como se Utiliza?</a>
+
+      <a>Comunidad</a>
+
+      <a>Documentación</a>
+
+      <a class="text-secondary">Explorar Planes</a>
+    </div>
+  </div>
+</nav>

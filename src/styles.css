@@ -1,0 +1,97 @@
+@import "tailwindcss";
+
+
+
+:root {
+    --font-family: "Manrope";
+}
+
+html {
+  @apply bg-bg scroll-smooth
+}
+body {
+  @apply antialiased font-manrope text-base text-white;
+}
+
+
+@theme {
+  --font-manrope: "Manrope", sans-serif;
+  --color-primary: #07D9C4;
+  --color-secondary: #E0E938;
+  --color-ternary: #EA267A;
+  --color-bg: #0C1014;
+  --color-aux2: #EFFEFB;
+  --color-aux3: #F8FCEA;
+  --color-aux4: #FEF1F8;
+}
+
+button,a {
+  cursor: pointer;
+}
+
+.radiant-bg {
+  @apply border-white/15 border-1;
+  background: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0.05) 0%,
+    rgba(255, 255, 255, 0) 50%,
+    rgba(255, 255, 255, 0.05) 99%,
+    rgba(255, 255, 255, 0.05) 100%
+  ) #0C1014;
+  
+}
+
+
+
+
+
+.dropdown-content-hidden {
+  display: none;
+}
+
+.button-primary{
+  @apply bg-linear-to-r from-primary/5 text-lg font-bold text-primary to-primary/5  border-white/15 border-1 p-[18px] flex items-center gap-2;
+  text-shadow: 0 0 3px #07D9C4;
+}
+
+.carrousel{
+  animation-name: carrousel_animation;
+  animation-iteration-count: infinite;
+  animation-duration: 20s;
+  animation-timing-function: linear;
+}
+
+@keyframes carrousel_animation{
+
+  100%{
+        transform: translateX(-800px);
+  }
+  
+}
+
+/* Containers Colors */
+
+.blue-style{
+  @apply border-1 bg-[#29A9EB]/5 border-[#29A9EB]/15
+}
+
+.grey-style{
+  @apply border-1 bg-[#FFFFFF]/5 border-[#FFFFFF]/15
+}
+
+.primary-style{
+  @apply border-1 bg-[#07D9C4]/5 border-[#FFFFFF]/15
+}
+
+/* Box Shadows */
+.box-shadow-red {
+  box-shadow: 0 0 10px rgba(234, 38, 122, 0.5);
+}
+
+.box-shadow-telegram-button {
+  box-shadow: 0 0 20px rgba(7, 217, 196, 0.25);
+}
+
+.box-shadow-aux-5 {
+  box-shadow: 0 0 20px rgba(7, 217, 196, 0.25);
+}

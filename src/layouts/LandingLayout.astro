@@ -1,43 +1,39 @@
 ---
-import '/src/assets/css/styles.css';
+import "/src/styles.css";
 ---
 
 <!doctype html>
 <html lang="en">
-<head>
-  <!-- Charset & Viewport -->
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <head>
+    <!-- Charset & Viewport -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <title>Vallax | Alertas Personalizadas para Productos en Wallapop y Vinted</title>
-  <meta name="description" content="Automatiza la búsqueda en Wallapop, Vinted y Milanuncios con Vallax. Recibe alertas de publicaciones y productos filtrados en tu Telegram en tiempo real." />
+    <title>
+      Vallax | Alertas Personalizadas para Productos en Wallapop y Vinted
+    </title>
+    <meta
+      name="description"
+      content="Automatiza la búsqueda en Wallapop, Vinted y Milanuncios con Vallax. Recibe alertas de publicaciones y productos filtrados en tu Telegram en tiempo real."
+    />
 
-  <meta name="robots" content="index,follow,max-image-preview:large" />
-  <meta name="googlebot" content="index,follow" />
+    <meta name="robots" content="index,follow,max-image-preview:large" />
+    <meta name="googlebot" content="index,follow" />
 
-  <!-- Favicons & PWA -->
-  <link rel="icon" type="image/png" href="/logo.png" />
-  <meta name="theme-color" content="#07D9C4" />
+    <!-- Favicons & PWA -->
+    <link rel="icon" type="image/png" href="/assients/images/logo.png" />
+    <meta name="theme-color" content="#07D9C4" />
 
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap"
+      rel="stylesheet"
+    />
 
-  <link rel="alternate" href="https://vallax.es/" hreflang="x-default" />
-
-  <!-- Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-Q50RP5V9EY"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-Q50RP5V9EY');
-  </script>
-</head>
-<body>
-
-  <slot />
-  <script src="/main.js" defer></script>
-
-</body>
+    <link rel="alternate" href="https://vallax.es/" hreflang="x-default" />
+  </head>
+  <body>
+    <slot />
+  </body>
 </html>
