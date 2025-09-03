@@ -1,5 +1,5 @@
 .marquee-track {
-  animation: marquee-scroll 40s linear infinite;
+  animation: marquee-scroll 100s linear infinite;
 }
 
 .marquee-group { flex: 0 0 auto; }
