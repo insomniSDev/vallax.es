@@ -1,38 +1,32 @@
 ---
-import Navbar from "./Navbar.astro";
 import Carousell from "./Carousell.astro";
 import RadialGlow from "./RadialGlow.astro";
-import Sec1 from "./Sec1.astro";
-import Sec2 from "./Sec2.astro";
-import Sec3 from "./Sec3.astro";
-import Sec4 from "./Sec4.astro";
-import Sec5 from "./Sec5.astro";
-import Sec6 from "./Sec6.astro";
-import Sec7 from "./Sec7.astro";
-import Sec8 from "./Sec8.astro";
-import Footer from "./Footer.astro";
+
+import Header from "./sections/Header.astro";
+import About from "./sections/About.astro";
+import Community from "./sections/Community.astro";
+import Footer from "./sections/Footer.astro";
+import HowToStart from "./sections/HowToStart.astro";
+import Navbar from "./sections/Navbar.astro";
+import Platforms from "./sections/Platforms.astro";
+import Points from "./sections/Points.astro";
 ---
 
 <div class="flex flex-col items-center overflow-x-hidden">
   <Navbar />
   <Carousell />
-  <Sec1 />
-  <Sec2 />
-  
+  <Header />
+  <Platforms />
+
   <div class="max-w-[1728px] w-full">
     <div class="px-[3%] lg:px-[5%] relative">
-
-      <Sec3 />
-      <Sec4 />
-      <Sec5 />
+      <About />
+      <Points />
+      <HowToStart />
       <RadialGlow />
-
+      <Community />
     </div>
   </div>
-
-  <Sec7 />
-  <Sec8 />
-
 </div>
 
 <Footer />
