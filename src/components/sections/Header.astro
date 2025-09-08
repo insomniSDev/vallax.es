@@ -1,5 +1,6 @@
 ---
-
+import { Image } from "astro:assets";
+import Phone from "../../images/phone.png";
 ---
 
 <!-- SECTION - 1 -->
@@ -272,7 +273,7 @@
           <!-- logo + notification bubbles -->
           <div class="relative w-fit">
             <!-- logo -->
-            <img src="/images/phone.png" alt="image-phone" class="w-[326px]" />
+            <Image src={Phone} alt="Phone image" layout="constrained" />
             <!-- notification bubbles -->
             <div class="absolute -top-[120px] left-0 px-[18px] w-full h-full">
               <!-- logo -->

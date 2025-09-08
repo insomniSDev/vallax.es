@@ -1,5 +1,7 @@
 ---
-
+import { Image } from "astro:assets";
+import GrenEye from "../../images/ojo-verde.jpg";
+import VallaxLogoLetters from "../../images/logo-letters.png";
 ---
 
 <!-- SECTION - 3 -->
@@ -23,10 +25,11 @@
       <div
         class="flex-1 border border-white/15 border-t-0 max-h-[300px] aspect-square xl:border-t xl:max-w-[300px]"
       >
-        <img
-          src="/images/ojo-verde.jpg"
-          alt="ojo-verde-image"
+        <Image
+          src={GrenEye}
+          alt="Gren eye image"
           class="object-cover h-full w-full"
+          layout="full-width"
         />
       </div>
       <!--  -->
@@ -192,11 +195,7 @@
       <div
         class="flex-1 flex items-center justify-center border border-white/15 border-t-0 aspect-square xl:max-w-[300px] xl:max-h-[300px]"
       >
-        <img
-          src="/images/logo-2.png"
-          alt="logo-vallax-2"
-          class="h-[136px] sm:h-[152px] lg:h-[200px] xl:h-[196px]"
-        />
+        <Image src={VallaxLogoLetters} alt="Vallax logo with letters" />
       </div>
       <!--  -->
       <div

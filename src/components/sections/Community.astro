@@ -1,98 +1,98 @@
 ---
-
+import { Image } from "astro:assets";
+import FondoVerde from "../../images/fondo-verde.jpg";
+import { getImage } from "astro:assets";
+const optimizedBackground = await getImage({ src: FondoVerde, format: "jpg" });
 ---
 
 <!-- SECTION - 7 [comunity] -->
-<div class="border-t border-t-white w-full">
-  <div
-    class="flex items-center justify-center h-[150px] md:h-[250px] w-full bg-cover bg-center bg-no-repeat"
-    style="background-image: url('/images/fondo-verde.jpg')"
-  >
-    <div class="max-w-[1728px] pl-[60px] lg:px-[5%] w-full">
-      <h3
-        class="text-[40px] leading-10 md:text-[60px] md:leading-[60px] xl:text-[80px] xl:leading-20 font-bold uppercase"
-      >
-        Comunidad Vallax
-      </h3>
-    </div>
-  </div>
-
-  <div
-    class="linear-bg-aux-8 border border-white/15 py-[52px] lg:flex lg:justify-center lg:py-20"
-  >
-    <div
-      class="max-w-[1728px] px-[3%] lg:px-[5%] lg:flex lg:justify-between lg:gap-4 w-full"
+<div class="border-t border-t-white w-full"></div>
+<div
+  class="flex items-center justify-center h-[150px] md:h-[250px] w-full bg-cover bg-center bg-no-repeat"
+  style={`background-image: url(${optimizedBackground.src});`}
+>
+  <div class="max-w-[1728px] pl-[60px] lg:px-[5%] w-full">
+    <h3
+      class="text-[40px] leading-10 md:text-[60px] md:leading-[60px] xl:text-[80px] xl:leading-20 font-bold uppercase"
     >
-      <p
-        class="text-xl leading-[30px] max-w-[1088px] xl:text-[32px] xl:leading-10"
+      Comunidad Vallax
+    </h3>
+  </div>
+</div>
+
+<div
+  class="linear-bg-aux-8 border border-white/15 py-[52px] lg:flex lg:justify-center lg:py-20"
+>
+  <div
+    class="max-w-[1728px] px-[3%] lg:px-[5%] lg:flex lg:justify-between lg:gap-4 w-full"
+  >
+    <p
+      class="text-xl leading-[30px] max-w-[1088px] xl:text-[32px] xl:leading-10"
+    >
+      Únete a la comunidad Vallax en <span class="text-[#29A9EB]">Telegram</span
+      >. Mantente informado, y no te pierdas nada importante. ¡Forma parte de
+      nuestra red!
+    </p>
+
+    <!-- [cta] -->
+    <div class="mt-[30px] flex justify-center lg:items-center lg:mt-0">
+      <a
+        onclick="trackClick('comunity-sec7')"
+        href="https://t.me/vallax_group"
+        target="_blank"
+        class="btn btn-primary max-h-[80px] py-[30px] lg:!w-[280px] group"
       >
-        Únete a la comunidad Vallax en <span class="text-[#29A9EB]"
-          >Telegram</span
-        >. Mantente informado, y no te pierdas nada importante. ¡Forma parte de
-        nuestra red!
-      </p>
-
-      <!-- [cta] -->
-      <div class="mt-[30px] flex justify-center lg:items-center lg:mt-0">
-        <a
-          onclick="trackClick('comunity-sec7')"
-          href="https://t.me/vallax_group"
-          target="_blank"
-          class="btn btn-primary max-h-[80px] py-[30px] lg:!w-[280px] group"
+        <span class="text-primary text-[32px] font-semibold leading-[20px]"
+          >/</span
         >
-          <span class="text-primary text-[32px] font-semibold leading-[20px]"
-            >/</span
-          >
-          <span class="text-primary text-xl font-bold leading-[20px]"
-            >Unirse a la Comunidad</span
-          >
+        <span class="text-primary text-xl font-bold leading-[20px]"
+          >Unirse a la Comunidad</span
+        >
 
-          <!-- [btn-borders] -->
-          <div class="contents">
-            <svg
-              class="absolute -top-px -left-px opacity-50 transition-opacity duration-150 group-hover:opacity-100"
-              width="16"
-              height="16"
-              viewBox="0 0 16 16"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path d="M1 16V1H16" stroke="#07D9C4"></path>
-            </svg>
-            <svg
-              class="absolute -top-px -right-px opacity-50 transition-opacity duration-150 group-hover:opacity-100"
-              width="16"
-              height="16"
-              viewBox="0 0 16 16"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path d="M0 1L15 1L15 16" stroke="#07D9C4"></path>
-            </svg>
-            <svg
-              class="absolute -bottom-px -right-px opacity-50 transition-opacity duration-150 group-hover:opacity-100"
-              width="16"
-              height="16"
-              viewBox="0 0 16 16"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path d="M15 0L15 15L3.57628e-07 15" stroke="#07D9C4"></path>
-            </svg>
-            <svg
-              class="absolute -bottom-px -left-px opacity-50 transition-opacity duration-150 group-hover:opacity-100"
-              width="16"
-              height="16"
-              viewBox="0 0 16 16"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path d="M16 15L1 15L0.999999 3.57628e-07" stroke="#07D9C4"
-              ></path>
-            </svg>
-          </div>
-        </a>
-      </div>
+        <!-- [btn-borders] -->
+        <div class="contents">
+          <svg
+            class="absolute -top-px -left-px opacity-50 transition-opacity duration-150 group-hover:opacity-100"
+            width="16"
+            height="16"
+            viewBox="0 0 16 16"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path d="M1 16V1H16" stroke="#07D9C4"></path>
+          </svg>
+          <svg
+            class="absolute -top-px -right-px opacity-50 transition-opacity duration-150 group-hover:opacity-100"
+            width="16"
+            height="16"
+            viewBox="0 0 16 16"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path d="M0 1L15 1L15 16" stroke="#07D9C4"></path>
+          </svg>
+          <svg
+            class="absolute -bottom-px -right-px opacity-50 transition-opacity duration-150 group-hover:opacity-100"
+            width="16"
+            height="16"
+            viewBox="0 0 16 16"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path d="M15 0L15 15L3.57628e-07 15" stroke="#07D9C4"></path>
+          </svg>
+          <svg
+            class="absolute -bottom-px -left-px opacity-50 transition-opacity duration-150 group-hover:opacity-100"
+            width="16"
+            height="16"
+            viewBox="0 0 16 16"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path d="M16 15L1 15L0.999999 3.57628e-07" stroke="#07D9C4"></path>
+          </svg>
+        </div>
+      </a>
     </div>
   </div>
 </div>

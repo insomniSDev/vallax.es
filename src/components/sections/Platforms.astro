@@ -1,5 +1,8 @@
 ---
-
+import { Image } from "astro:assets";
+import VintedImage from "../../images/vinted.png";
+import WallapopImage from "../../images/wallapop.png";
+import MilAnuncios from "../../images/milanuncios.png";
 ---
 
 <!-- SECTION -2 -->
@@ -14,25 +17,13 @@
     </div>
     <div class="flex justify-evenly mt-5 lg:mt-7">
       <a href="https://www.vinted.es/" target="_blank">
-        <img
-          src="/images/vinted.png"
-          alt="vinted"
-          class="h-10 md:h-20 xl:h-full max-h-[100px]"
-        />
+        <Image src={VintedImage} alt={"vinted"} />
       </a>
       <a href="https://es.wallapop.com/" target="_blank">
-        <img
-          src="/images/wallapop.png"
-          alt="wallapop"
-          class="h-10 md:h-20 xl:h-full max-h-[100px]"
-        />
+        <Image src={WallapopImage} alt={"wallapop"} />
       </a>
       <a href="https://www.milanuncios.com/" target="_blank">
-        <img
-          alt="milanuncios"
-          src="/images/milanuncios.png"
-          class="h-10 md:h-20 xl:h-full max-h-[100px]"
-        />
+        <Image src={MilAnuncios} alt={"milanuncios"} />
       </a>
     </div>
   </div>

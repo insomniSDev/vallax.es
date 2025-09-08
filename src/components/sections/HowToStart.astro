@@ -1,5 +1,7 @@
 ---
-
+import { Image } from "astro:assets";
+import StartImage from "../../images/start.jpg";
+import OpenImage from "../../images/open-app.jpg";
 ---
 
 <!-- SECTION - 5 -->
@@ -103,11 +105,7 @@
     </div>
 
     <div class="hidden 2xl:block">
-      <img
-        src="/images/start.jpg"
-        alt="start"
-        class="min-w-[500px] min-h-[330px] max-h-[330px] max-w-[500px]"
-      />
+      <Image src={StartImage} alt="Image to start" />
     </div>
   </div>
 
@@ -140,11 +138,7 @@
     </div>
 
     <div class="hidden 2xl:block">
-      <img
-        src="/images/open-app.jpg"
-        alt="open-app-image"
-        class="min-w-[500px] min-h-[330px] max-h-[330px] max-w-[500px]"
-      />
+      <Image src={OpenImage} alt="Open app" />
     </div>
   </div>
 </div>
