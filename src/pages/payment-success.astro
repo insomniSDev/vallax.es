@@ -1,5 +1,10 @@
 ---
 import LandingLayout from "../layouts/LandingLayout.astro";
+
+const seo = {
+  title: "Pago confirmado | Vallax",
+  description: "Tu suscripción a Vallax ha sido activada. Accede al bot para gestionar tus alertas en Telegram.",
+};
 ---
 
 <style>
@@ -31,7 +36,7 @@ import LandingLayout from "../layouts/LandingLayout.astro";
     }
 </style>
 
-<LandingLayout>
+<LandingLayout lang="es" seo={seo}>
     <main class="w-full">
         <div class="success-container">
             <svg

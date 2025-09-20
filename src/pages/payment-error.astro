@@ -1,5 +1,10 @@
 ---
 import LandingLayout from "../layouts/LandingLayout.astro";
+
+const seo = {
+  title: "Error al procesar el pago | Vallax",
+  description: "Algo ha fallado al procesar tu pago en Vallax. Inténtalo de nuevo o ponte en contacto con nosotros.",
+};
 ---
 
 <style>
@@ -37,7 +42,7 @@ import LandingLayout from "../layouts/LandingLayout.astro";
     }
 </style>
 
-<LandingLayout>
+<LandingLayout lang="es" seo={seo}>
     <main class="w-full">
         <div class="success-container">
             <svg

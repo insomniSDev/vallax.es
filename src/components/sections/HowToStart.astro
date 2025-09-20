@@ -1,144 +1,84 @@
 ---
-import { Image } from "astro:assets";
-import StartImage from "../../images/start.jpg";
-import OpenImage from "../../images/open-app.jpg";
+import CornerBorders from "../ui/CornerBorders.astro";
+import type { Translation } from "../../i18n";
+
+interface Props {
+  t: Translation["howToStart"];
+}
+
+const { t } = Astro.props as Props;
 ---
 
-<!-- SECTION - 5 -->
-<div id="howitworks"><!-- ANCHOR --></div>
-<div class="mt-[160px] lg:mt-[228px]">
-  <div class="contents 2xl:flex gap-6">
-    <!-- [card 1] -->
-    <div
-      class="relative linear-bg-aux-5 max-w-[1032px] border border-white/15 pt-20 pb-10 pl-8 pr-10 flex-1 xl:max-h-[330px]"
-    >
-      <div class="lg:flex lg:flex-col justify-between lg:h-full">
-        <div>
-          <p class="block text-2xl leading-8 lg:text-[32px] lg:leading-10">
-            Ingresa al Bot por Telegram e inicia el chat con Vallax.
-          </p>
-          <a
-            href="https://play.google.com/store/apps/details?id=org.telegram.messenger&hl=en"
-            target="_blank"
-            class="block mt-5 lg:mt-7 text-[#29A9EB] text-base leading-4 cursor-pointer"
-            >Descargar Telegram</a
-          >
+<div id="howitworks"></div>
+<section class="mt-[160px] lg:mt-[200px]">
+  <div class="max-w-[1728px] w-full">
+    <div class="px-[3%] lg:px-[5%]">
+      <div class="space-y-10 text-center md:text-left">
+        <div class="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
+          <div>
+            <span class="text-sm font-semibold uppercase tracking-[0.35em] text-primary/80">
+              {t.badge}
+            </span>
+            <h3 class="mt-2 text-[34px] leading-9 font-bold md:text-[48px] md:leading-[54px]">
+              {t.title}
+            </h3>
+          </div>
+          <p class="text-base leading-6 text-white/70 md:max-w-[460px]">{t.description}</p>
         </div>
 
-        <!-- [cta] -->
-        <div class="mt-8 flex justify-center md:justify-end">
-          <a
-            onclick="trackClick('vallax-sec5')"
-            href="https://t.me/vallaxbot"
-            target="_blank"
-            class="btn btn-primary max-h-[80px] !w-fit px-[30px] py-[30px] group"
-          >
-            <span
-              class="text-[#07D9C4] text-[32px] font-semibold leading-[20px]"
-              >/</span
+        <div class="grid gap-6 lg:grid-cols-2">
+          {t.steps.map((step) => (
+            <article
+              class="how-step group relative overflow-hidden border border-white/15 linear-bg-aux-5 p-7 md:p-9 flex flex-col gap-6 text-left"
+              key={step.number}
             >
-            <span class="text-[#07D9C4] text-xl font-bold leading-[20px]"
-              >Comenzar</span
-            >
+              <CornerBorders color="#07D9C4" />
+              <span
+                class="pointer-events-none absolute inset-x-0 top-0 h-px opacity-60 bg-gradient-to-r from-transparent via-[#07D9C4]/40 to-transparent"
+                aria-hidden="true"
+              ></span>
+              <span
+                class="pointer-events-none absolute inset-x-0 bottom-0 h-px opacity-40 bg-gradient-to-r from-transparent via-white/10 to-transparent"
+                aria-hidden="true"
+              ></span>
 
-            <!-- [btn-borders] -->
-            <div class="contents">
-              <svg
-                class="absolute -top-px -left-px opacity-50 transition-opacity duration-150 group-hover:opacity-100"
-                width="16"
-                height="16"
-                viewBox="0 0 16 16"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path d="M1 16V1H16" stroke="#07D9C4"></path>
-              </svg>
-              <svg
-                class="absolute -top-px -right-px opacity-50 transition-opacity duration-150 group-hover:opacity-100"
-                width="16"
-                height="16"
-                viewBox="0 0 16 16"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path d="M0 1L15 1L15 16" stroke="#07D9C4"></path>
-              </svg>
-              <svg
-                class="absolute -bottom-px -right-px opacity-50 transition-opacity duration-150 group-hover:opacity-100"
-                width="16"
-                height="16"
-                viewBox="0 0 16 16"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path d="M15 0L15 15L3.57628e-07 15" stroke="#07D9C4"></path>
-              </svg>
-              <svg
-                class="absolute -bottom-px -left-px opacity-50 transition-opacity duration-150 group-hover:opacity-100"
-                width="16"
-                height="16"
-                viewBox="0 0 16 16"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path d="M16 15L1 15L0.999999 3.57628e-07" stroke="#07D9C4"
-                ></path>
-              </svg>
-            </div>
-          </a>
+              <header class="flex items-start gap-4">
+                <span class="step-index">{step.number}</span>
+                <div class="space-y-3">
+                  <h4 class="text-[22px] font-bold leading-7 text-white md:text-[26px] md:leading-8">
+                    {step.title}
+                  </h4>
+                  <p class="text-base leading-7 text-white/75">{step.description}</p>
+                </div>
+              </header>
+
+              {step.hint && (
+                <p class="border border-[#07D9C4]/25 bg-primary/10 px-4 py-3 text-sm leading-5 text-[#07D9C4]/90">
+                  {step.hint}
+                </p>
+              )}
+
+              {step.ctaLabel && (
+                <div class="flex justify-start">
+                  <a
+                    onclick="trackClick('vallax-sec5')"
+                    href="https://t.me/vallaxbot"
+                    target="_blank"
+                    class="btn btn-primary !w-fit px-[26px] py-[22px] group"
+                  >
+                    <span class="text-[#07D9C4] text-[24px] font-semibold leading-[20px]">/</span>
+                    <span class="text-[#07D9C4] text-lg font-bold leading-[20px]">
+                      {step.ctaLabel}
+                    </span>
+
+                    <CornerBorders color="#07D9C4" />
+                  </a>
+                </div>
+              )}
+            </article>
+          ))}
         </div>
       </div>
-
-      <!-- [absolute] -->
-      <div class="absolute top-0 left-8 -translate-y-1/2">
-        <div class="flex items-center gap-1">
-          <span
-            class="text-primary text-[80px] leading-[80px] lg:text-[100px] lg:leading-[100px] font-bold"
-            >//</span
-          >
-          <span
-            class="text-white text-[40px] leading-[40px] lg:text-[60px] lg:leading-[60px] font-extrabold"
-            >1er PASO</span
-          >
-        </div>
-      </div>
-    </div>
-
-    <div class="hidden 2xl:block">
-      <Image src={StartImage} alt="Image to start" />
     </div>
   </div>
-
-  <div class="contents lg:mt-[120px] lg:flex gap-6">
-    <!-- [card 2] -->
-    <div
-      class="mt-[90px] lg:mt-0 relative linear-bg-aux-5 max-w-[1032px] border border-white/15 pt-20 pl-8 pr-10 pb-10 flex-1 xl:max-h-[330px]"
-    >
-      <div class="lg:flex lg:flex-col justify-between lg:h-full">
-        <div>
-          <p class="block text-2xl leading-8 lg:text-[32px] lg:leading-10">
-            Utiliza el menú inferior para acceder a la aplicación.
-          </p>
-        </div>
-      </div>
-
-      <!-- [absolute] -->
-      <div class="absolute top-0 left-8 -translate-y-1/2">
-        <div class="flex items-center gap-1">
-          <span
-            class="text-primary text-[80px] leading-[80px] lg:text-[100px] lg:leading-[100px] font-bold"
-            >//</span
-          >
-          <span
-            class="text-white text-[40px] leading-[40px] lg:text-[60px] lg:leading-[60px] font-extrabold"
-            >2do PASO</span
-          >
-        </div>
-      </div>
-    </div>
-
-    <div class="hidden 2xl:block">
-      <Image src={OpenImage} alt="Open app" />
-    </div>
-  </div>
-</div>
+</section>

@@ -1,151 +1,133 @@
 ---
 import Image from "astro/components/Image.astro";
 import Logo from "../../images/logo.png";
+import CornerBorders from "../ui/CornerBorders.astro";
+import type { Translation, Locale } from "../../i18n";
+
+interface Props {
+  t: Translation["navbar"];
+  lang: Locale;
+}
+
+const { t, lang } = Astro.props as Props;
+
+const links = [
+  { href: "#howitworks", label: t.links.howItWorks },
+  { href: "#que-es-vallax", label: t.links.whatIs },
+  {
+    href: "https://t.me/vallax_group",
+    label: t.links.community,
+    external: true,
+  },
+];
 ---
 
-<div class="max-w-[1728px] w-full">
-  <!-- navbar [wrapper] -->
+<nav
+  class="fixed top-0 left-0 z-50 w-full border-b border-white/10 bg-black/50 backdrop-blur-xl"
+>
   <div
-    class="fixed top-0 left-0 w-full z-50 flex py-[30px] px-[3%] lg:gap-2.5 lg:px-[5%]"
+    class="mx-auto flex max-w-[1728px] items-center justify-between gap-6 px-[3%] py-4 lg:px-[5%]"
   >
-    <!-- navbar [content] -->
+    <a href={lang === "es" ? "/es/" : "/en/"} class="flex items-center gap-3">
+      <Image src={Logo} alt="Vallax" class="h-9 w-auto" />
+    </a>
+
     <div
-      class="navbar-bg flex justify-between lg:justify-start items-center gap-5 xl:gap-8 2xl:gap-[75px] grow py-6 px-[26px] lg:py-[16px] lg:px-10 border border-white/15"
+      class="hidden lg:flex items-center gap-6 text-xs uppercase tracking-[0.3em] text-white/60"
     >
-      <div>
-        <Image src={Logo} alt="Logo" />
-      </div>
-
-      <!-- navbar [items] -->
-      <div class="hidden lg:contents">
-        <a
-          onclick="trackClick('vallax-nav')"
-          href="https://t.me/vallax_group"
-          target="_blank"
-          class="block text-base leading-[14px] cursor-pointer duration-150 hover:text-primary"
-          >Comunidad</a
-        >
-        <a
-          href="#howitworks"
-          class="block text-base leading-[14px] cursor-pointer duration-150 hover:text-primary"
-          >¿Cómo se Utiliza?</a
-        >
-        <a
-          href="#pricing"
-          class="!hidden block text-secondary text-base leading-[14px] cursor-pointer duration-150 hover:text-primary"
-          >Explorar Planes</a
-        >
-      </div>
-
-      <!-- navbar [menu-btn] -->
-      <div class="flex lg:hidden justify-center items-center w-[30px] h-[30px]">
-        <div
-          id="menu-wrapper"
-          class="hamburger-menu-wrapper menu-clikable-item"
-          onclick="toggleMenu()"
-        >
-          <div class="hamburger-menu">
-            <div class="hamburger-bar"></div>
-            <div class="hamburger-bar"></div>
-            <div class="hamburger-bar"></div>
-          </div>
-        </div>
-      </div>
+      {
+        links.map((link) => (
+          <a
+            href={link.href}
+            target={link.external ? "_blank" : undefined}
+            rel={link.external ? "noreferrer" : undefined}
+            class={`transition-colors ${link.external ? "hover:text-primary" : "hover:text-white"}`}
+          >
+            {link.label}
+          </a>
+        ))
+      }
+      <a
+        href={t.languageSwitcher.href}
+        hreflang={t.languageSwitcher.target}
+        class="text-white/50 transition-colors hover:text-white"
+      >
+        {t.languageSwitcher.shortLabel}
+      </a>
     </div>
 
-    <!-- navbar [cta] -->
     <div class="hidden lg:block">
       <a
-        onclick="trackClick('vallax-nav-cta')"
+        onclick="trackClick('nav-desktop-primary')"
         href="https://t.me/vallaxbot"
         target="_blank"
-        class="btn btn-primary p-7 group"
+        class="btn btn-primary px-[22px] py-[14px] group"
       >
-        <span class="text-[#07D9C4] text-[32px] font-bold leading-[20px]"
+        <span class="text-[#07D9C4] text-[24px] font-semibold leading-[20px]"
           >/</span
         >
-        <span class="text-[#07D9C4] text-xl font-bold leading-[20px]"
-          >Comenzar</span
+        <span class="text-[#07D9C4] text-base font-bold leading-[20px]"
+          >{t.primaryCta}</span
         >
+        <CornerBorders color="#07D9C4" />
+      </a>
+    </div>
 
-        <!-- [btn-borders] -->
-        <div class="contents">
-          <svg
-            class="absolute -top-px -left-px opacity-50 transition-opacity duration-150 group-hover:opacity-100"
-            width="16"
-            height="16"
-            viewBox="0 0 16 16"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
+    <button
+      id="mobile-menu-toggle"
+      aria-label="Toggle menu"
+      class="flex h-10 w-10 items-center justify-center border border-white/20 bg-black/50 lg:hidden"
+    >
+      <span class="sr-only">Toggle navigation</span>
+      <div class="space-y-[6px]">
+        <span class="block h-0.5 w-6 bg-white transition-transform duration-200"
+        ></span>
+        <span class="block h-0.5 w-6 bg-white transition-opacity duration-200"
+        ></span>
+        <span class="block h-0.5 w-6 bg-white transition-transform duration-200"
+        ></span>
+      </div>
+    </button>
+  </div>
+
+  <div id="mobile-menu-overlay" class="fixed inset-0 z-40 hidden bg-black/80">
+  </div>
+
+  <div id="mobile-menu" class="fixed inset-x-0 top-[72px] z-50 hidden px-[3%]">
+    <div
+      class="relative border border-white/15 bg-black/95 px-6 py-7 text-xs uppercase tracking-[0.3em] text-white/75"
+    >
+      <CornerBorders color="#07D9C4" />
+      {
+        links.map((link) => (
+          <a
+            onclick="window.closeMobileMenu()"
+            href={link.href}
+            target={link.external ? "_blank" : undefined}
+            rel={link.external ? "noreferrer" : undefined}
+            class={`block py-3 ${link.external ? "text-primary" : ""}`}
           >
-            <path d="M1 16V1H16" stroke="#07D9C4"></path>
-          </svg>
-          <svg
-            class="absolute -top-px -right-px opacity-50 transition-opacity duration-150 group-hover:opacity-100"
-            width="16"
-            height="16"
-            viewBox="0 0 16 16"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path d="M0 1L15 1L15 16" stroke="#07D9C4"></path>
-          </svg>
-          <svg
-            class="absolute -bottom-px -right-px opacity-50 transition-opacity duration-150 group-hover:opacity-100"
-            width="16"
-            height="16"
-            viewBox="0 0 16 16"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path d="M15 0L15 15L3.57628e-07 15" stroke="#07D9C4"></path>
-          </svg>
-          <svg
-            class="absolute -bottom-px -left-px opacity-50 transition-opacity duration-150 group-hover:opacity-100"
-            width="16"
-            height="16"
-            viewBox="0 0 16 16"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path d="M16 15L1 15L0.999999 3.57628e-07" stroke="#07D9C4"></path>
-          </svg>
-        </div>
+            {link.label}
+          </a>
+        ))
+      }
+      <a
+        onclick="window.closeMobileMenu()"
+        href={t.languageSwitcher.href}
+        hreflang={t.languageSwitcher.target}
+        class="block py-3 text-white/50"
+      >
+        {t.languageSwitcher.label}
+      </a>
+      <a
+        onclick="window.closeMobileMenu(); trackClick('nav-mobile-primary')"
+        href="https://t.me/vallaxbot"
+        target="_blank"
+        class="mt-4 inline-flex items-center gap-2 border border-primary/40 px-4 py-2 text-primary"
+      >
+        <span>/</span>
+        {t.primaryCta}
       </a>
     </div>
   </div>
-
-  <!-- [BACKDROP] -->
-  <div
-    id="menu-backdrop"
-    class="fixed top-0 left-0 z-40 backdrop-blur-sm h-screen w-full hidden"
-  >
-  </div>
-  <!-- [MENU] -->
-  <div
-    id="menu-content"
-    class="px-[3%] invisible z-50 h-0 fixed top-[135px] left-0 w-full"
-  >
-    <div
-      class="linear-bg-aux-9 flex flex-col gap-8 px-[26px] py-8 border border-white/15"
-    >
-      <a
-        onclick="toggleMenu(); trackClick('vallax-nav')"
-        href="https://t.me/vallax_group"
-        target="_blank"
-        class="block text-lg leading-[18px]">Comunidad</a
-      >
-      <a
-        onclick="toggleMenu()"
-        href="#howitworks"
-        class="block text-lg leading-[18px]">¿Cómo se Utiliza?</a
-      >
-      <a
-        onclick="toggleMenu()"
-        href="#pricing"
-        class="!hidden block text-secondary text-lg leading-[18px]"
-        >Explorar Planes</a
-      >
-    </div>
-  </div>
-</div>
+</nav>

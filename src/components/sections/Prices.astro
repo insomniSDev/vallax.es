@@ -1,4 +1,6 @@
 ---
+import CornerBorders from "../ui/CornerBorders.astro";
+import PlusIcon from "../icons/PlusIcon.astro";
 ---
 
 <!-- SECTION - 6 [pricing] -->
@@ -28,12 +30,7 @@
             <div class="flex gap-2 mt-6 lg:mt-0">
               <div class="mt-1.5">
                 <span>
-                  <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <g opacity="0.75">
-                      <path d="M0 7.07129H14.1421" stroke="white" stroke-width="2" />
-                      <path d="M7.07104 14.1426L7.07104 0.000442238" stroke="white" stroke-width="2" />
-                    </g>
-                  </svg>
+                  <PlusIcon />
                 </span>
               </div>
               <div class="max-w-[285px]">
@@ -44,12 +41,7 @@
             <div class="flex gap-2 mt-3">
               <div class="mt-1.5">
                 <span>
-                  <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <g opacity="0.75">
-                      <path d="M0 7.07129H14.1421" stroke="white" stroke-width="2" />
-                      <path d="M7.07104 14.1426L7.07104 0.000442238" stroke="white" stroke-width="2" />
-                    </g>
-                  </svg>
+                  <PlusIcon />
                 </span>
               </div>
               <div class="max-w-[285px]">
@@ -60,12 +52,7 @@
             <div class="flex gap-2 mt-3">
               <div class="mt-1.5">
                 <span>
-                  <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <g opacity="0.75">
-                      <path d="M0 7.07129H14.1421" stroke="white" stroke-width="2" />
-                      <path d="M7.07104 14.1426L7.07104 0.000442238" stroke="white" stroke-width="2" />
-                    </g>
-                  </svg>
+                  <PlusIcon />
                 </span>
               </div>
               <div class="max-w-[285px]">
@@ -82,22 +69,7 @@
                 <span class="text-white text-shadow-aux-4 text-[32px] font-semibold leading-[20px]">/</span>
                 <span class="text-white text-shadow-aux-4 text-xl font-bold leading-[20px]">Comenzar</span>
 
-                <!-- [btn-borders] -->
-                <div class="contents">
-                  <svg class="absolute -top-px -left-px opacity-50 transition-opacity duration-150 group-hover:opacity-100" width="16" height="16" viewBox="0 0 16 16" fill="none"
-                    xmlns="http://www.w3.org/2000/svg">
-                    <path d="M1 16V1H16" stroke="#FFFFFF" />
-                  </svg>
-                  <svg class="absolute -top-px -right-px opacity-50 transition-opacity duration-150 group-hover:opacity-100" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M0 1L15 1L15 16" stroke="#FFFFFF" />
-                  </svg>
-                  <svg class="absolute -bottom-px -right-px opacity-50 transition-opacity duration-150 group-hover:opacity-100" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M15 0L15 15L3.57628e-07 15" stroke="#FFFFFF" />
-                  </svg>
-                  <svg class="absolute -bottom-px -left-px opacity-50 transition-opacity duration-150 group-hover:opacity-100" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M16 15L1 15L0.999999 3.57628e-07" stroke="#FFFFFF" />
-                  </svg>
-                </div>
+                <CornerBorders color="#FFFFFF" />
               </a>
             </div>
           </div>
@@ -110,22 +82,7 @@
           <div class="btn btn-primary max-h-[50px] py-4 pointer-events-none">
             <span class="text-white text-xl font-bold leading-5 uppercase">Más popular</span>
 
-            <!-- [btn-borders] -->
-            <div class="contents">
-              <svg class="absolute -top-px -left-px" width="16" height="16" viewBox="0 0 16 16" fill="none"
-                xmlns="http://www.w3.org/2000/svg">
-                <path d="M1 16V1H16" stroke="#07D9C4" />
-              </svg>
-              <svg class="absolute -top-px -right-px" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M0 1L15 1L15 16" stroke="#07D9C4" />
-              </svg>
-              <svg class="absolute -bottom-px -right-px" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M15 0L15 15L3.57628e-07 15" stroke="#07D9C4" />
-              </svg>
-              <svg class="absolute -bottom-px -left-px" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M16 15L1 15L0.999999 3.57628e-07" stroke="#07D9C4" />
-              </svg>
-            </div>
+            <CornerBorders color="#07D9C4" baseClass="absolute" />
           </div>
         </div>
 
@@ -147,12 +104,7 @@
               <div class="flex gap-2 mt-6 lg:mt-0">
                 <div class="mt-1.5">
                   <span>
-                    <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <g opacity="0.75">
-                        <path d="M0 7.07129H14.1421" stroke="white" stroke-width="2" />
-                        <path d="M7.07104 14.1426L7.07104 0.000442238" stroke="white" stroke-width="2" />
-                      </g>
-                    </svg>
+                    <PlusIcon />
                   </span>
                 </div>
                 <div class="max-w-[285px]">
@@ -163,12 +115,7 @@
               <div class="flex gap-2 mt-3">
                 <div class="mt-1.5">
                   <span>
-                    <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <g opacity="0.75">
-                        <path d="M0 7.07129H14.1421" stroke="white" stroke-width="2" />
-                        <path d="M7.07104 14.1426L7.07104 0.000442238" stroke="white" stroke-width="2" />
-                      </g>
-                    </svg>
+                    <PlusIcon />
                   </span>
                 </div>
                 <div class="max-w-[285px]">
@@ -179,12 +126,7 @@
               <div class="flex gap-2 mt-3">
                 <div class="mt-1.5">
                   <span>
-                    <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <g opacity="0.75">
-                        <path d="M0 7.07129H14.1421" stroke="white" stroke-width="2" />
-                        <path d="M7.07104 14.1426L7.07104 0.000442238" stroke="white" stroke-width="2" />
-                      </g>
-                    </svg>
+                    <PlusIcon />
                   </span>
                 </div>
                 <div class="max-w-[285px]">
@@ -201,22 +143,7 @@
                   <span class="text-[#07D9C4] text-[32px] font-semibold leading-[20px]">/</span>
                   <span class="text-[#07D9C4] text-xl font-bold leading-[20px]">Adquirir Plan</span>
 
-                  <!-- [btn-borders] -->
-                  <div class="contents">
-                    <svg class="absolute -top-px -left-px opacity-50 transition-opacity duration-150 group-hover:opacity-100" width="16" height="16" viewBox="0 0 16 16" fill="none"
-                      xmlns="http://www.w3.org/2000/svg">
-                      <path d="M1 16V1H16" stroke="#07D9C4" />
-                    </svg>
-                    <svg class="absolute -top-px -right-px opacity-50 transition-opacity duration-150 group-hover:opacity-100" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M0 1L15 1L15 16" stroke="#07D9C4" />
-                    </svg>
-                    <svg class="absolute -bottom-px -right-px opacity-50 transition-opacity duration-150 group-hover:opacity-100" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M15 0L15 15L3.57628e-07 15" stroke="#07D9C4" />
-                    </svg>
-                    <svg class="absolute -bottom-px -left-px opacity-50 transition-opacity duration-150 group-hover:opacity-100" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M16 15L1 15L0.999999 3.57628e-07" stroke="#07D9C4" />
-                    </svg>
-                  </div>
+                  <CornerBorders color="#07D9C4" />
                 </button>
               </div>
             </div>
@@ -243,12 +170,7 @@
             <div class="flex gap-2 mt-6 lg:mt-0">
               <div class="mt-1.5">
                 <span>
-                  <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <g opacity="0.75">
-                      <path d="M0 7.07129H14.1421" stroke="white" stroke-width="2" />
-                      <path d="M7.07104 14.1426L7.07104 0.000442238" stroke="white" stroke-width="2" />
-                    </g>
-                  </svg>
+                  <PlusIcon />
                 </span>
               </div>
               <div class="max-w-[285px]">
@@ -259,12 +181,7 @@
             <div class="flex gap-2 mt-3">
               <div class="mt-1.5">
                 <span>
-                  <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <g opacity="0.75">
-                      <path d="M0 7.07129H14.1421" stroke="white" stroke-width="2" />
-                      <path d="M7.07104 14.1426L7.07104 0.000442238" stroke="white" stroke-width="2" />
-                    </g>
-                  </svg>
+                  <PlusIcon />
                 </span>
               </div>
               <div class="max-w-[285px]">
@@ -275,12 +192,7 @@
             <div class="flex gap-2 mt-3">
               <div class="mt-1.5">
                 <span>
-                  <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <g opacity="0.75">
-                      <path d="M0 7.07129H14.1421" stroke="white" stroke-width="2" />
-                      <path d="M7.07104 14.1426L7.07104 0.000442238" stroke="white" stroke-width="2" />
-                    </g>
-                  </svg>
+                  <PlusIcon />
                 </span>
               </div>
               <div class="max-w-[285px]">
@@ -291,12 +203,7 @@
             <div class="flex gap-2 mt-3">
               <div class="mt-1.5">
                 <span>
-                  <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <g opacity="0.75">
-                      <path d="M0 7.07129H14.1421" stroke="white" stroke-width="2" />
-                      <path d="M7.07104 14.1426L7.07104 0.000442238" stroke="white" stroke-width="2" />
-                    </g>
-                  </svg>
+                  <PlusIcon />
                 </span>
               </div>
               <div class="max-w-[285px]">
@@ -307,12 +214,7 @@
             <div class="flex gap-2 mt-3">
               <div class="mt-1.5">
                 <span>
-                  <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <g opacity="0.75">
-                      <path d="M0 7.07129H14.1421" stroke="white" stroke-width="2" />
-                      <path d="M7.07104 14.1426L7.07104 0.000442238" stroke="white" stroke-width="2" />
-                    </g>
-                  </svg>
+                  <PlusIcon />
                 </span>
               </div>
               <div class="max-w-[285px]">
@@ -329,22 +231,7 @@
                 <span class="text-secondary text-[32px] font-semibold leading-[20px]">/</span>
                 <span class="text-secondary text-xl font-bold leading-[20px]">Adquirir Plan</span>
 
-                <!-- [btn-borders] -->
-                <div class="contents">
-                  <svg class="absolute -top-px -left-px opacity-50 transition-opacity duration-150 group-hover:opacity-100" width="16" height="16" viewBox="0 0 16 16" fill="none"
-                    xmlns="http://www.w3.org/2000/svg">
-                    <path d="M1 16V1H16" stroke="#E0E938" />
-                  </svg>
-                  <svg class="absolute -top-px -right-px opacity-50 transition-opacity duration-150 group-hover:opacity-100" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M0 1L15 1L15 16" stroke="#E0E938" />
-                  </svg>
-                  <svg class="absolute -bottom-px -right-px opacity-50 transition-opacity duration-150 group-hover:opacity-100" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M15 0L15 15L3.57628e-07 15" stroke="#E0E938" />
-                  </svg>
-                  <svg class="absolute -bottom-px -left-px opacity-50 transition-opacity duration-150 group-hover:opacity-100" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M16 15L1 15L0.999999 3.57628e-07" stroke="#E0E938" />
-                  </svg>
-                </div>
+                <CornerBorders color="#E0E938" />
               </button>
             </div>
           </div>

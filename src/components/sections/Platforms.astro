@@ -3,28 +3,52 @@ import { Image } from "astro:assets";
 import VintedImage from "../../images/vinted.png";
 import WallapopImage from "../../images/wallapop.png";
 import MilAnuncios from "../../images/milanuncios.png";
+import type { Translation } from "../../i18n";
+
+interface Props {
+  t: Translation["platforms"];
+}
+
+const { t } = Astro.props as Props;
 ---
 
-<!-- SECTION -2 -->
-<div class="relative mt-[-220px] md:mt-[-160px] 2xl:mt-[120px] w-full">
-  <div class="linear-bg-aux-2 border-y border-y-white/15 pt-12 pb-11">
-    <div class="text-center">
-      <h3
-        class="text-sm leading-[14px] md:text-xl md:leading-5 font-medium text-white/50"
+<section class="w-full pt-16">
+  <div class="max-w-[1728px] mx-auto px-[3%] lg:px-[5%]">
+    <div class="flex flex-col items-center gap-6 text-center">
+      <span
+        class="text-xs font-semibold uppercase tracking-[0.35em] text-white/60"
       >
-        Plataformas Compatibles
-      </h3>
-    </div>
-    <div class="flex justify-evenly mt-5 lg:mt-7">
-      <a href="https://www.vinted.es/" target="_blank">
-        <Image src={VintedImage} alt={"vinted"} />
-      </a>
-      <a href="https://es.wallapop.com/" target="_blank">
-        <Image src={WallapopImage} alt={"wallapop"} />
-      </a>
-      <a href="https://www.milanuncios.com/" target="_blank">
-        <Image src={MilAnuncios} alt={"milanuncios"} />
-      </a>
+        {t.badge}
+      </span>
+
+      <div
+        class="mt-6 flex flex-wrap items-center justify-center gap-8 md:gap-12"
+      >
+        <a
+          href="https://www.vinted.es/"
+          target="_blank"
+          class="flex items-center gap-3 text-white/60 transition-colors hover:text-white"
+        >
+          <Image src={VintedImage} alt="Vinted" class="h-8 w-auto" />
+          <span class="text-sm uppercase tracking-[0.25em]">Vinted</span>
+        </a>
+        <a
+          href="https://es.wallapop.com/"
+          target="_blank"
+          class="flex items-center gap-3 text-white/60 transition-colors hover:text-white"
+        >
+          <Image src={WallapopImage} alt="Wallapop" class="h-8 w-auto" />
+          <span class="text-sm uppercase tracking-[0.25em]">Wallapop</span>
+        </a>
+        <a
+          href="https://www.milanuncios.com/"
+          target="_blank"
+          class="flex items-center gap-3 text-white/60 transition-colors hover:text-white"
+        >
+          <Image src={MilAnuncios} alt="Milanuncios" class="h-8 w-auto" />
+          <span class="text-sm uppercase tracking-[0.25em]">Milanuncios</span>
+        </a>
+      </div>
     </div>
   </div>
-</div>
+</section>

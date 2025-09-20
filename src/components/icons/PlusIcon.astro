@@ -1,0 +1,31 @@
+---
+interface Props {
+  size?: number;
+  stroke?: string;
+  strokeWidth?: number;
+  opacity?: number;
+  class?: string;
+}
+
+const {
+  size = 15,
+  stroke = "white",
+  strokeWidth = 2,
+  opacity = 0.75,
+  class: className = "",
+} = Astro.props;
+---
+
+<svg
+  width={size}
+  height={size}
+  viewBox="0 0 15 15"
+  fill="none"
+  xmlns="http://www.w3.org/2000/svg"
+  class={className}
+>
+  <g opacity={opacity}>
+    <path d="M0 7.07129H14.1421" stroke={stroke} stroke-width={strokeWidth} />
+    <path d="M7.07104 14.1426L7.07104 0.000442238" stroke={stroke} stroke-width={strokeWidth} />
+  </g>
+</svg>
