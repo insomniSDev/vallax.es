@@ -1,26 +1,27 @@
 import { useState } from "react";
+import { Image } from "astro:assets";
 
-type CardHeroProps = {
+export type CardHeroProps = {
   name: string;
   price: string;
   category: string;
-  imgSrc: string;
+  img: ImageMetadata;
   description: string;
 };
 
-const fallbackSrc = "/images/hero/fallback.svg";
+import FallbackImage from "../../images/hero/fallback.svg";
 
 const CardHero = ({
   name,
   price,
   category,
-  imgSrc,
+  img,
   description,
 }: CardHeroProps) => {
-  const [imageSrc, setImageSrc] = useState(imgSrc);
+  const [image, setImage] = useState(img);
 
   const handleImageError = () => {
-    setImageSrc(fallbackSrc);
+    setImage(FallbackImage);
   };
 
   return (
@@ -33,7 +34,7 @@ const CardHero = ({
       >
         <img
           className="aspect-video w-full rounded bg-gray-700 object-cover shrink-0"
-          src={imageSrc}
+          src={image.src}
           alt={name}
           loading="lazy"
           onError={handleImageError}

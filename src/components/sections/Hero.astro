@@ -1,5 +1,4 @@
 ---
-import type { ImageMetadata } from "astro:assets";
 import type { Translation, Locale } from "../../i18n";
 import VintedImage from "/src/images/vinted.png";
 import WallapopImage from "/src/images/wallapop.png";
@@ -10,10 +9,9 @@ import HeroBackground from "../ui/HeroBackground.astro";
 interface Props {
   lang: Locale;
   t: Translation["hero"];
-  platforms: Translation["platforms"];
 }
 
-const { lang, t, platforms } = Astro.props as Props;
+const { lang, t } = Astro.props as Props;
 
 const platformLogos: Record<string, { image: ImageMetadata; alt: string }> = {
   Vinted: { image: VintedImage, alt: "Vinted" },

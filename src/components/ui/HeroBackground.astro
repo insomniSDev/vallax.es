@@ -2,20 +2,42 @@
   import CardHero from "./CardHero";
   import type { Locale } from "../../i18n";
 
+  import LaptopImage from "../../images/hero/laptop.jpg";
+  import CameraImage from "../../images/hero/camera.jpg";
+  import DroneImage from "../../images/hero/drone.jpg";
+  import EBikeImage from "../../images/hero/e-bike.jpg";
+  import EReaderImage from "../../images/hero/e-reader.jpg";
+  import EScooterImage from "../../images/hero/e-scooter.jpg";
+  import FallbackSvgImage from "../../images/hero/fallback.svg";
+  import HeadphonesImage from "../../images/hero/headphones.jpg";
+  import KitchetApplianceImage from "../../images/hero/kitchen-appliance.jpg";
+  import MonitorImage from "../../images/hero/monitor.jpg";
+  import MouseImage from "../../images/hero/mouse.jpg";
+  import NintendoSwitchImage from "../../images/hero/nintendo-switch.jpg";
+  import PlaystationImage from "../../images/hero/playstation.jpg";
+  import RobotVacuumImage from "../../images/hero/robot-vacuum.jpg";
+  import SmartphoneImage from "../../images/hero/smartphone.jpg";
+  import SmartwatchImage from "../../images/hero/smartwatch.jpg";
+  import SpeakerImage from "../../images/hero/speaker.jpg";
+  import TabletImage from "../../images/hero/tablet.jpg";
+  import TvImage from "../../images/hero/tv.jpg";
+  import VrHeadsetImage from "../../images/hero/vr-headset.jpg";
+  import XboxImage from "../../images/hero/xbox.jpg";
+
   type LocaleString = Record<Locale, string>;
 
   type Product = {
     name: string;
     price: string;
-    imgSrc: string;
+    img: ImageMetadata;
     category: LocaleString;
     description: LocaleString;
   };
 
-  type CardProduct = {
+  type CardProductPro = {
     name: string;
     price: string;
-    imgSrc: string;
+    img: ImageMetadata;
     category: string;
     description: string;
   };
@@ -26,7 +48,7 @@
     {
       name: "Premium Smartphone 256 GB",
       price: "1 079 EUR",
-      imgSrc: "/images/hero/smartphone.jpg",
+      img: SmartphoneImage,
       category: {
         es: "Teléfonos",
         en: "Phones",
@@ -39,7 +61,7 @@
     {
       name: "Advanced Android Smartphone",
       price: "620 EUR",
-      imgSrc: "/images/hero/smartphone.jpg",
+      img: SmartphoneImage,
       category: {
         es: "Teléfonos",
         en: "Phones",
@@ -52,7 +74,7 @@
     {
       name: "Ultralight Laptop 16 GB RAM",
       price: "1 190 EUR",
-      imgSrc: "/images/hero/laptop.jpg",
+      img: LaptopImage,
       category: {
         es: "Portátiles",
         en: "Laptops",
@@ -65,7 +87,7 @@
     {
       name: "Professional Tablet 11-inch",
       price: "780 EUR",
-      imgSrc: "/images/hero/tablet.jpg",
+      img: TabletImage,
       category: {
         es: "Tabletas",
         en: "Tablets",
@@ -78,7 +100,7 @@
     {
       name: "Rugged Sports Watch",
       price: "645 EUR",
-      imgSrc: "/images/hero/smartwatch.jpg",
+      img: SmartwatchImage,
       category: {
         es: "Tecnología portátil",
         en: "Wearables",
@@ -91,7 +113,7 @@
     {
       name: "Next-Gen VR Headset",
       price: "520 EUR",
-      imgSrc: "/images/hero/vr-headset.jpg",
+      img: VrHeadsetImage,
       category: {
         es: "Realidad virtual",
         en: "Virtual reality",
@@ -104,7 +126,7 @@
     {
       name: "PlayStation 4",
       price: "480 EUR",
-      imgSrc: "/images/hero/playstation.jpg",
+      img: PlaystationImage,
       category: {
         es: "Consolas de sobremesa",
         en: "Home consoles",
@@ -117,7 +139,7 @@
     {
       name: "Xbox",
       price: "430 EUR",
-      imgSrc: "/images/hero/xbox.jpg",
+      img: XboxImage,
       category: {
         es: "Consolas de sobremesa",
         en: "Home consoles",
@@ -130,7 +152,7 @@
     {
       name: "Mirrorless Camera 24 MP",
       price: "790 EUR",
-      imgSrc: "/images/hero/camera.jpg",
+      img: CameraImage,
       category: {
         es: "Fotografía",
         en: "Photography",
@@ -143,7 +165,7 @@
     {
       name: "Travel Mirrorless Camera",
       price: "820 EUR",
-      imgSrc: "/images/hero/camera.jpg",
+      img: CameraImage,
       category: {
         es: "Fotografía",
         en: "Photography",
@@ -156,7 +178,7 @@
     {
       name: "4K Camera Drone",
       price: "890 EUR",
-      imgSrc: "/images/hero/drone.jpg",
+      img: DroneImage,
       category: {
         es: "Drones",
         en: "Drones",
@@ -169,7 +191,7 @@
     {
       name: "Gaming Laptop 32 GB RAM",
       price: "950 EUR",
-      imgSrc: "/images/hero/laptop.jpg",
+      img: LaptopImage,
       category: {
         es: "Portátiles",
         en: "Laptops",
@@ -183,7 +205,7 @@
     {
       name: "Nintendo Switch OLED",
       price: "290 EUR",
-      imgSrc: "/images/hero/nintendo-switch.jpg",
+      img: NintendoSwitchImage,
       category: {
         es: "Consolas portátiles",
         en: "Portable consoles",
@@ -197,7 +219,7 @@
     {
       name: "Premium Robot Vacuum",
       price: "380 EUR",
-      imgSrc: "/images/hero/robot-vacuum.jpg",
+      img: RobotVacuumImage,
       category: {
         es: "Hogar inteligente",
         en: "Smart home",
@@ -210,7 +232,7 @@
     {
       name: "Multifunction Kitchen Robot",
       price: "950 EUR",
-      imgSrc: "/images/hero/kitchen-appliance.jpg",
+      img: KitchetApplianceImage,
       category: {
         es: "Electrodomésticos",
         en: "Appliances",
@@ -223,7 +245,7 @@
     {
       name: "Laser Robot Vacuum",
       price: "340 EUR",
-      imgSrc: "/images/hero/robot-vacuum.jpg",
+      img: RobotVacuumImage,
       category: {
         es: "Hogar inteligente",
         en: "Smart home",
@@ -236,7 +258,7 @@
     {
       name: "Urban Electric Bike",
       price: "1 450 EUR",
-      imgSrc: "/images/hero/e-bike.jpg",
+      img: EBikeImage,
       category: {
         es: "Movilidad eléctrica",
         en: "Electric mobility",
@@ -249,7 +271,7 @@
     {
       name: "Advanced Electric Scooter",
       price: "540 EUR",
-      imgSrc: "/images/hero/e-scooter.jpg",
+      img: EScooterImage,
       category: {
         es: "Movilidad eléctrica",
         en: "Electric mobility",
@@ -262,7 +284,7 @@
     {
       name: "E-reader With Stylus",
       price: "320 EUR",
-      imgSrc: "/images/hero/e-reader.jpg",
+      img: EReaderImage,
       category: {
         es: "Lectura digital",
         en: "E-readers",
@@ -275,7 +297,7 @@
     {
       name: "Ergonomic Wireless Mouse",
       price: "85 EUR",
-      imgSrc: "/images/hero/mouse.jpg",
+      img: MouseImage,
       category: {
         es: "Periféricos",
         en: "Peripherals",
@@ -288,7 +310,7 @@
     {
       name: "Professional 27-inch QHD Monitor",
       price: "410 EUR",
-      imgSrc: "/images/hero/monitor.jpg",
+      img: MonitorImage,
       category: {
         es: "Monitores",
         en: "Monitors",
@@ -301,7 +323,7 @@
     {
       name: "Vintage CRT TV 29-inch",
       price: "190 EUR",
-      imgSrc: "/images/hero/tv.jpg",
+      img: TvImage,
       category: {
         es: "Televisores",
         en: "TVs",
@@ -314,7 +336,7 @@
     {
       name: "ANC Over-Ear Headphones",
       price: "260 EUR",
-      imgSrc: "/images/hero/headphones.jpg",
+      img: HeadphonesImage,
       category: {
         es: "Audio",
         en: "Audio",
@@ -327,7 +349,7 @@
     {
       name: "Living Room Bluetooth Speaker",
       price: "220 EUR",
-      imgSrc: "/images/hero/speaker.jpg",
+      img: SpeakerImage,
       category: {
         es: "Audio",
         en: "Audio",
@@ -342,7 +364,7 @@
   const productData: CardProduct[] = baseProductData.map((item) => ({
     name: item.name,
     price: item.price,
-    imgSrc: item.imgSrc,
+    img: item.img,
     category: item.category[lang] ?? item.category.es,
     description: item.description[lang] ?? item.description.es,
   }));
@@ -547,7 +569,6 @@
         })
       }
 
-
        item.classList.add("card-start")
        await delay(500);
        body.classList.add("visible-card")
@@ -560,14 +581,10 @@
       await delay(8000);
 
       // Thow endShow
-
       item.classList.remove("card-start")
       body.classList.remove("visible-card")
 
-
-
       await delay(5000);
-
     }
   }
 </script>
