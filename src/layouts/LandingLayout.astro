@@ -1,0 +1,62 @@
+---
+import "/src/assets/css/styles.css";
+import Navbar from "../components/sections/Navbar.astro";
+import Footer from "../components/sections/Footer.astro";
+import type { Translation, Locale } from "../i18n";
+
+interface Props {
+  lang: Locale;
+  seo: Translation["seo"];
+  navbar: Translation["navbar"];
+  footer: Translation["footer"];
+  faq?: Translation["faq"];
+}
+
+const { lang, seo, navbar, footer, faq } = Astro.props as Props;
+---
+
+<!doctype html>
+<html lang={lang}>
+  <head>
+    <!-- Charset & Viewport -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>{seo.title}</title>
+    <meta name="description" content={seo.description} />
+
+    <meta name="robots" content="index,follow,max-image-preview:large" />
+    <meta name="googlebot" content="index,follow" />
+
+
+    <!-- Light mode favicon -->
+    <link rel="icon" href="/favicon-light.svg"  media="(prefers-color-scheme: light)">
+
+    <!-- Dark mode favicon -->
+    <link rel="icon" href="/favicon-dark.svg" media="(prefers-color-scheme: dark)">
+
+    <meta name="theme-color" content="#07D9C4" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap"
+      rel="stylesheet"
+    />
+
+
+
+
+  </head>
+  <body>
+    <header>
+      <Navbar t={navbar} lang={lang} />
+    </header>
+    <main>
+      <slot />
+    </main>
+    <Footer t={footer} />
+    <script src="/src/main.js" defer></script>
+
+  </body>
+</html>

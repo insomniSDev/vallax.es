@@ -1,0 +1,59 @@
+html {
+  background: #050709;
+  position: relative;
+  min-height: 100%;
+  @apply scroll-smooth;
+}
+
+body {
+  @apply antialiased font-manrope text-base text-white;
+  @apply bg-background/80;
+  /*background: radial-gradient(
+      circle at 50% 160px,
+      rgba(7, 217, 196, 0.12) 0%,
+      rgba(7, 217, 196, 0.015) 40%,
+      rgba(5, 7, 9, 0) 60%
+    ),
+    radial-gradient(
+      circle at 75% 460px,
+      rgba(234, 38, 122, 0.05) 0%,
+      rgba(234, 38, 122, 0) 55%
+    ),
+    linear-gradient(
+      180deg,
+      rgba(5, 7, 9, 0.98) 0%,
+      rgba(5, 7, 9, 1) 55%,
+      rgba(4, 6, 8, 1) 100%
+    );*/
+}
+
+/* Scrollbar styling */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 255, 255, 0.2) transparent;
+}
+
+*::-webkit-scrollbar {
+  width: 6px;
+}
+
+*::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.25) 0%,
+    rgba(255, 255, 255, 0.08) 100%
+  );
+  border-radius: 9999px;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.35) 0%,
+    rgba(255, 255, 255, 0.12) 100%
+  );
+}

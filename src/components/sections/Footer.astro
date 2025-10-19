@@ -1,0 +1,65 @@
+---
+import type { Translation } from "../../i18n";
+
+interface Props {
+  t: Translation["footer"];
+}
+
+const { t } = Astro.props as Props;
+---
+
+<footer class="border-t border-white/10 bg-black/30 backdrop-blur-sm">
+  <div
+    class="mx-auto w-full max-w-7xl px-4 py-10 lg:px-6 flex flex-col md:flex-row items-center justify-between gap-8"
+  >
+    <div
+      class="flex flex-wrap gap-4 text-xs uppercase tracking-[0.25em] text-white/50"
+    >
+      {
+        t.legal.map((link) => (
+          link.href ? (
+            <a
+              href={link.href}
+              target="_blank"
+              rel="noreferrer"
+              class="hover:text-white transition-colors"
+            >
+              {link.label}
+            </a>
+          ) : (
+            <span class="text-white/50 cursor-default">{link.label}</span>
+          )
+        ))
+      }
+    </div>
+
+    <div
+      class="flex flex-wrap items-center gap-4 text-xs uppercase tracking-[0.25em]"
+    >
+      <a
+        href={`mailto:${t.contactEmailLabel}`}
+        class="text-white hover:text-primary transition-colors tracking-normal normal-case text-sm"
+      >
+        {t.contactEmailLabel}
+      </a>
+      {
+        t.socials.map((social) => (
+          <a
+            href={social.href}
+            target="_blank"
+            rel="noreferrer"
+            class="text-white/50 hover:text-white transition-colors"
+          >
+            {social.label}
+          </a>
+        ))
+      }
+    </div>
+  </div>
+
+  <div
+    class="border-t border-white/10 py-6 text-center text-xs uppercase tracking-[0.25em] text-white/50"
+  >
+    {t.rights}
+  </div>
+</footer>

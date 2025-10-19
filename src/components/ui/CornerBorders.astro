@@ -1,0 +1,31 @@
+---
+interface Props {
+  color?: string;
+  baseClass?: string;
+  class?: string;
+}
+
+const {
+  color = "#FFFFFF",
+  baseClass = "absolute transition-opacity duration-150 group-hover:opacity-100",
+  class: className = "",
+} = Astro.props;
+const base = baseClass.trim();
+const extra = className ? ` ${className}` : "";
+const styleAttr = `--corner-color: ${color};`;
+---
+
+<Fragment>
+  <span
+    class={`${base} corner-border corner-border--tl${extra}`}
+    style={styleAttr}></span>
+  <span
+    class={`${base} corner-border corner-border--tr${extra}`}
+    style={styleAttr}></span>
+  <span
+    class={`${base} corner-border corner-border--br${extra}`}
+    style={styleAttr}></span>
+  <span
+    class={`${base} corner-border corner-border--bl${extra}`}
+    style={styleAttr}></span>
+</Fragment>

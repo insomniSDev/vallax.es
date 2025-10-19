@@ -1,0 +1,22 @@
+---
+import Wrapper from "../../components/Wrapper.astro";
+import LandingLayout from "../../layouts/LandingLayout.astro";
+import { translations, isLocale, locales, type Locale } from "../../i18n";
+export function getStaticPaths() {
+  return locales.map((locale) => ({ params: { lang: locale } }));
+}
+
+const paramLang = Astro.params.lang;
+const locale: Locale = isLocale(paramLang) ? paramLang : "es";
+const t = translations[locale];
+---
+
+<LandingLayout
+  lang={locale}
+  seo={t.seo}
+  navbar={t.navbar}
+  footer={t.footer}
+  faq={t.faq}
+>
+  <Wrapper lang={locale} t={t} />
+</LandingLayout>

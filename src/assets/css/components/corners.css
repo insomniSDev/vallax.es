@@ -1,0 +1,90 @@
+.corner-border {
+  width: 16px;
+  height: 16px;
+  position: absolute;
+  pointer-events: none;
+  display: block;
+}
+
+.corner-border::before,
+.corner-border::after {
+  content: "";
+  position: absolute;
+  background: var(--corner-color, #ffffff);
+}
+
+.corner-border--tl {
+  top: -1px;
+  left: -1px;
+}
+
+.corner-border--tl::before {
+  height: 1px;
+  width: 100%;
+  top: 0;
+  left: 0;
+}
+
+.corner-border--tl::after {
+  width: 1px;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+
+.corner-border--tr {
+  top: -1px;
+  right: -1px;
+}
+
+.corner-border--tr::before {
+  height: 1px;
+  width: 100%;
+  top: 0;
+  left: 0;
+}
+
+.corner-border--tr::after {
+  width: 1px;
+  height: 100%;
+  top: 0;
+  right: 0;
+}
+
+.corner-border--br {
+  bottom: -1px;
+  right: -1px;
+}
+
+.corner-border--br::before {
+  height: 1px;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+}
+
+.corner-border--br::after {
+  width: 1px;
+  height: 100%;
+  bottom: 0;
+  right: 0;
+}
+
+.corner-border--bl {
+  bottom: -1px;
+  left: -1px;
+}
+
+.corner-border--bl::before {
+  height: 1px;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+}
+
+.corner-border--bl::after {
+  width: 1px;
+  height: 100%;
+  bottom: 0;
+  left: 0;
+}

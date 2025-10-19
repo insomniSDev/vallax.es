@@ -1,0 +1,172 @@
+---
+import Logo from "../../images/logo_vertical.svg";
+import type { Translation, Locale } from "../../i18n";
+
+interface Props {
+  t: Translation["navbar"];
+  lang: Locale;
+}
+
+const { t, lang } = Astro.props as Props;
+
+const links = [
+  { href: "#getting-started", label: t.links.gettingStarted },
+  { href: "#features", label: t.links.features },
+  { href: "#pricing", label: t.links.pricing },
+  { href: "#community", label: t.links.community },
+  { href: "#faq", label: t.links.faq },
+];
+
+const visibleLinks = links.filter((link) => link.href !== "#pricing");
+---
+
+<nav class="fixed top-0 left-0 z-50 w-full bg-black/50 backdrop-blur-xl">
+  <div
+    class="mx-auto w-full px-4 lg:px-6 xl:max-w-7xl flex h-full justify-between py-3"
+  >
+    <a
+      href={lang === "es" ? "/es/" : "/en/"}
+      class="flex items-center gap-3 w-51"
+    >
+      <Logo class="w-auto h-9" aria-label="vallax logo" />
+    </a>
+
+    <div
+      class="hidden lg:flex items-center gap-6 text-xs uppercase tracking-[0.3em] text-white/60"
+    >
+      {
+        visibleLinks.map((link) => (
+          <a href={link.href} class="hover:text-white">
+            {link.label}
+          </a>
+        ))
+      }
+    </div>
+
+    <div class="hidden lg:block w-51">
+      <div class="flex items-center">
+        <a
+          href={t.languageSwitcher.href}
+          hreflang={t.languageSwitcher.target}
+          class="mr-5 mx-6"
+        >
+          {t.languageSwitcher.shortLabel == "ES" ? "🇬🇧" : "🇪🇸"}
+        </a>
+
+        <a
+          href="https://t.me/vallaxbot"
+          target="_blank"
+          class="leading-none py-2"
+        >
+          <span
+            class="hover:text-primary text-sm text-white/60 font-bold px-3 py-2 border-white/60"
+            >{t.primaryCta}</span
+          >
+        </a>
+      </div>
+    </div>
+
+    <button
+      id="mobile-menu-toggle"
+      aria-label="Toggle menu"
+      class="flex h-10 w-10 items-center justify-center border border-white/20 bg-black/50 lg:hidden"
+    >
+      <span class="sr-only">Toggle navigation</span>
+      <div class="space-y-[6px]">
+        <span
+          class="block h-0.5 w-6 bg-white transition-transform duration-200 rounded-full"
+        ></span>
+        <span
+          class="block h-0.5 w-6 bg-white transition-opacity duration-200 rounded-full"
+        ></span>
+        <span
+          class="block h-0.5 w-6 bg-white transition-transform duration-200 rounded-full"
+        ></span>
+      </div>
+    </button>
+  </div>
+
+  <div id="mobile-menu-overlay" class="fixed inset-0 z-40 hidden bg-black/80">
+  </div>
+
+  <div
+    id="mobile-menu"
+    class="fixed inset-x-0 top-[72px] z-50 hidden bg-black/95 text-xs uppercase tracking-[0.3em] text-white/70"
+  >
+    <nav class="flex flex-col">
+      {
+        visibleLinks.map((link, index) => (
+          <a
+            onclick="window.closeMobileMenu()"
+            href={link.href}
+            class={`px-[6%] py-4 transition-colors hover:text-white ${
+              index === 0 ? "" : "border-t"
+            } border-white/10`}
+          >
+            {link.label}
+          </a>
+        ))
+      }
+
+      <a
+        onclick="window.closeMobileMenu(); trackClick('nav-mobile-primary')"
+        href="https://t.me/vallaxbot?start=nav_cta"
+        target="_blank"
+        class="px-[6%] py-4 border-t border-white/10 text-primary transition-colors hover:text-primary/80"
+      >
+        {t.primaryCta}
+      </a>
+      <a
+        onclick="window.closeMobileMenu()"
+        href={t.languageSwitcher.href}
+        hreflang={t.languageSwitcher.target}
+        class="px-[6%] py-4 border-t border-white/10 text-white/50 transition-colors hover:text-white"
+      >
+        {t.languageSwitcher.label}
+      </a>
+    </nav>
+  </div>
+</nav>
+
+<style>
+  nav a.active {
+    color: white;
+  }
+</style>
+
+<script>
+  const sections = document.querySelectorAll("section");
+
+  const navLinks = document.querySelectorAll("nav a");
+
+  const options = {
+    root: null,
+    rootMargin: "-50% 0px -50% 0px",
+    threshold: 0,
+  };
+
+  const callback = (entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        const sectionId = entry.target.id;
+
+        navLinks.forEach((link) => {
+          link.classList.remove("active");
+        });
+
+        const activeLink = document.querySelector(
+          `nav a[href="#${sectionId}"]`,
+        );
+        if (activeLink) {
+          activeLink.classList.add("active");
+        }
+      }
+    });
+  };
+
+  const observer = new IntersectionObserver(callback, options);
+
+  sections.forEach((section) => {
+    observer.observe(section);
+  });
+</script>

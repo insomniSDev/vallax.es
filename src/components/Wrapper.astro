@@ -1,0 +1,29 @@
+---
+import Hero from "./sections/Hero.astro";
+import Features from "./sections/Features.astro";
+import GettingStarted from "./sections/Getting-started.astro";
+import Community from "./sections/Community.astro";
+import FAQ from "./sections/FAQ.astro";
+
+import type { Locale, Translation } from "../i18n";
+
+interface Props {
+  lang: Locale;
+  t: Translation;
+}
+
+const { lang, t } = Astro.props as Props;
+---
+
+<div class="flex h-full flex-col gap-35 my-10">
+  <Hero lang={lang} t={t.hero} platforms={t.platforms} />
+
+  <div
+    class="mx-auto w-full px-4 lg:px-6 xl:max-w-7xl flex flex-col gap-35"
+  >
+    <GettingStarted t={t.gettingStarted} />
+    <Features t={t.features} />
+    <Community t={t.community} />
+    <FAQ t={t.faq} />
+  </div>
+</div>

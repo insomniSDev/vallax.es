@@ -1,0 +1,6 @@
+@import "./tailwind.css";
+@import "./components/global.css";
+@import "./components/buttons.css";
+@import "./components/corners.css";
+@import "./components/helpers.css";
+@import "./components/card_hero.css";

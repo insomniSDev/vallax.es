@@ -1,0 +1,135 @@
+---
+import type { ImageMetadata } from "astro:assets";
+import type { Translation, Locale } from "../../i18n";
+import VintedImage from "/src/images/vinted.png";
+import WallapopImage from "/src/images/wallapop.png";
+import MilAnunciosImage from "/src/images/milanuncios.png";
+import TodocoleccionImage from "/src/images/todocoleccion.png";
+import HeroBackground from "../ui/HeroBackground.astro";
+
+interface Props {
+  lang: Locale;
+  t: Translation["hero"];
+  platforms: Translation["platforms"];
+}
+
+const { lang, t, platforms } = Astro.props as Props;
+
+const platformLogos: Record<string, { image: ImageMetadata; alt: string }> = {
+  Vinted: { image: VintedImage, alt: "Vinted" },
+  Wallapop: { image: WallapopImage, alt: "Wallapop" },
+  Milanuncios: { image: MilAnunciosImage, alt: "Milanuncios" },
+  Todocoleccion: { image: TodocoleccionImage, alt: "Todocoleccion" },
+};
+
+const heroMarketplaces = [
+  {
+    label: "Wallapop",
+    href: "https://es.wallapop.com/",
+    logo: platformLogos["Wallapop"],
+  },
+  {
+    label: "Vinted",
+    href: "https://www.vinted.es/",
+    logo: platformLogos["Vinted"],
+  },
+  {
+    label: "Milanuncios",
+    href: "https://www.milanuncios.com/",
+    logo: platformLogos["Milanuncios"],
+  },
+  {
+    label: "Todocoleccion",
+    href: "https://www.todocoleccion.net/",
+    logo: platformLogos["Todocoleccion"],
+  },
+];
+---
+
+<section
+  id="hero"
+  class="relative flex items-center justify-center w-full overflow-hidden min-h-[85vh]"
+>
+  <HeroBackground lang={lang} />
+  <div
+    id="hero-content"
+    class="relative z-10 flex flex-col items-center gap-6 text-center px-4"
+  >
+    <span
+      class="inline-flex w-fit items-center gap-2 rounded-full border border-[var(--color-ternary)] bg-transparent px-6 py-[6px] text-[12px] font-semibold uppercase tracking-[0.32em] text-[var(--color-ternary)] shadow-lg shadow-[var(--color-ternary)]/20 md:px-7 md:py-2"
+    >
+      <span class="h-2 w-2 rounded-full bg-[var(--color-ternary)]"></span>
+
+      BETA
+    </span>
+
+    <h1
+      class="max-w-4xl text-3xl font-extrabold tracking-tighter md:text-5xl lg:text-6xl text-white"
+    >
+      {t.title}
+    </h1>
+
+    <p class="max-w-2xl text-base text-white/70 md:text-xl">
+      {t.description}
+    </p>
+
+    <a
+      onclick="trackClick('hero-primary-cta')"
+      href="https://t.me/vallaxbot?start=hero_cta"
+      target="_blank"
+      class="text-base font-semibold tracking-[0.12em] text-primary px-6 py-3 bg-primary/10 rounded-xl hover:bg-primary/13 mt-2 backdrop-blur-md"
+    >
+      <span class="flex items-center gap-3">
+        <span class="relative flex h-2 w-2">
+          <span
+            class="absolute inline-flex h-full w-full rounded-full bg-primary opacity-70 motion-safe:animate-ping"
+          ></span>
+
+          <span class="relative inline-flex h-2 w-2 rounded-full bg-primary"
+          ></span>
+        </span>
+
+        <span>{t.primaryCta}</span>
+      </span>
+    </a>
+
+    <div class="mt-20 w-full">
+      <span
+        class="text-xs font-semibold uppercase tracking-widest text-white/50"
+      >
+        {t.platforms.title}
+      </span>
+
+      <ul
+        class="mt-6 flex flex-wrap items-center justify-center gap-x-8 gap-y-4"
+      >
+        {
+          heroMarketplaces.map((platform) => (
+            <li class="flex items-center">
+              <a
+                href={platform.href}
+                target="_blank"
+                class="flex items-center gap-3 opacity-60 transition-opacity hover:opacity-100"
+                rel="noreferrer"
+              >
+                {platform.logo && (
+                  <img
+                    src={platform.logo.image.src}
+                    alt={platform.logo.alt}
+                    width={platform.logo.image.width}
+                    height={platform.logo.image.height}
+                    loading="lazy"
+                    decoding="async"
+                    class="h-6 w-auto"
+                  />
+                )}
+
+                {platform.label}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+  </div>
+</section>

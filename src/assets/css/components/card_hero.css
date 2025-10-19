@@ -1,0 +1,23 @@
+.visible-card {
+  opacity: 1;
+}
+
+.card-start {
+  animation-name: startShow;
+  animation-duration: 4s;
+  animation-iteration-count: 1;
+  animation-timing-function: linear;
+}
+
+/* Animación para iluminar como parpadeo de encendido*/
+@keyframes startShow {
+  0% {
+    border-color: color-mix(in oklab, var(--color-primary) 0%, transparent);
+  }
+  50% {
+    border-color: color-mix(in oklab, var(--color-primary) 100%, transparent);
+  }
+  100% {
+    border-color: color-mix(in oklab, var(--color-primary) 0%, transparent);
+  }
+}

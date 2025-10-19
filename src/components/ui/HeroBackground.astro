@@ -1,0 +1,573 @@
+---
+  import CardHero from "./CardHero";
+  import type { Locale } from "../../i18n";
+
+  type LocaleString = Record<Locale, string>;
+
+  type Product = {
+    name: string;
+    price: string;
+    imgSrc: string;
+    category: LocaleString;
+    description: LocaleString;
+  };
+
+  type CardProduct = {
+    name: string;
+    price: string;
+    imgSrc: string;
+    category: string;
+    description: string;
+  };
+
+  const { lang } = Astro.props as { lang: Locale };
+
+  const baseProductData: Product[] = [
+    {
+      name: "Premium Smartphone 256 GB",
+      price: "1 079 EUR",
+      imgSrc: "/images/hero/smartphone.jpg",
+      category: {
+        es: "Teléfonos",
+        en: "Phones",
+      },
+      description: {
+        es: "Garantía activa, batería al 94 %, incluye cable original.",
+        en: "Active warranty, 94% battery health, original cable included.",
+      },
+    },
+    {
+      name: "Advanced Android Smartphone",
+      price: "620 EUR",
+      imgSrc: "/images/hero/smartphone.jpg",
+      category: {
+        es: "Teléfonos",
+        en: "Phones",
+      },
+      description: {
+        es: "Pantalla impecable, funda incluida, factura de compra.",
+        en: "Pristine display, case included, purchase invoice attached.",
+      },
+    },
+    {
+      name: "Ultralight Laptop 16 GB RAM",
+      price: "1 190 EUR",
+      imgSrc: "/images/hero/laptop.jpg",
+      category: {
+        es: "Portátiles",
+        en: "Laptops",
+      },
+      description: {
+        es: "Solo 6 meses de uso, 16 GB RAM, listo para trabajar.",
+        en: "Only 6 months of use, 16 GB RAM, ready to work.",
+      },
+    },
+    {
+      name: "Professional Tablet 11-inch",
+      price: "780 EUR",
+      imgSrc: "/images/hero/tablet.jpg",
+      category: {
+        es: "Tabletas",
+        en: "Tablets",
+      },
+      description: {
+        es: "Modelo 2022, lápiz activo opcional, entrega en mano.",
+        en: "2022 model, active stylus optional, local pickup.",
+      },
+    },
+    {
+      name: "Rugged Sports Watch",
+      price: "645 EUR",
+      imgSrc: "/images/hero/smartwatch.jpg",
+      category: {
+        es: "Tecnología portátil",
+        en: "Wearables",
+      },
+      description: {
+        es: "Correa deportiva naranja, cargador magnético, estado 9/10.",
+        en: "Orange sport band, magnetic charger, condition 9/10.",
+      },
+    },
+    {
+      name: "Next-Gen VR Headset",
+      price: "520 EUR",
+      imgSrc: "/images/hero/vr-headset.jpg",
+      category: {
+        es: "Realidad virtual",
+        en: "Virtual reality",
+      },
+      description: {
+        es: "Casco sin marcas, correas y mandos originales incluidos.",
+        en: "Headset spotless, original straps and controllers included.",
+      },
+    },
+    {
+      name: "PlayStation 4",
+      price: "480 EUR",
+      imgSrc: "/images/hero/playstation.jpg",
+      category: {
+        es: "Consolas de sobremesa",
+        en: "Home consoles",
+      },
+      description: {
+        es: "Dos mandos, garantía vigente, se entrega con caja.",
+        en: "Two controllers, active warranty, boxed.",
+      },
+    },
+    {
+      name: "Xbox",
+      price: "430 EUR",
+      imgSrc: "/images/hero/xbox.jpg",
+      category: {
+        es: "Consolas de sobremesa",
+        en: "Home consoles",
+      },
+      description: {
+        es: "Incluye 3 meses de servicio online y mando extra opcional.",
+        en: "Includes 3 months of online service and optional extra controller.",
+      },
+    },
+    {
+      name: "Mirrorless Camera 24 MP",
+      price: "790 EUR",
+      imgSrc: "/images/hero/camera.jpg",
+      category: {
+        es: "Fotografía",
+        en: "Photography",
+      },
+      description: {
+        es: "Cuerpo + lente 16-50 mm, contador 12k disparos.",
+        en: "Body plus 16-50 mm lens, 12k shutter count.",
+      },
+    },
+    {
+      name: "Travel Mirrorless Camera",
+      price: "820 EUR",
+      imgSrc: "/images/hero/camera.jpg",
+      category: {
+        es: "Fotografía",
+        en: "Photography",
+      },
+      description: {
+        es: "Kit 18-45 mm, perfecta para viajes, entrega rápida.",
+        en: "18-45 mm kit, built for travel, fast delivery.",
+      },
+    },
+    {
+      name: "4K Camera Drone",
+      price: "890 EUR",
+      imgSrc: "/images/hero/drone.jpg",
+      category: {
+        es: "Drones",
+        en: "Drones",
+      },
+      description: {
+        es: "Kit completo, menos de 5 horas de vuelo.",
+        en: "Full kit, under 5 flight hours.",
+      },
+    },
+    {
+      name: "Gaming Laptop 32 GB RAM",
+      price: "950 EUR",
+      imgSrc: "/images/hero/laptop.jpg",
+      category: {
+        es: "Portátiles",
+        en: "Laptops",
+      },
+      description: {
+        es: "GPU de alto rendimiento, 32 GB RAM, ideal gaming y edición.",
+        en: "High-performance GPU, 32 GB RAM, built for gaming and editing.",
+      },
+    },
+
+    {
+      name: "Nintendo Switch OLED",
+      price: "290 EUR",
+      imgSrc: "/images/hero/nintendo-switch.jpg",
+      category: {
+        es: "Consolas portátiles",
+        en: "Portable consoles",
+      },
+      description: {
+        es: "Joy-Con sin drift, Mario Kart instalado.",
+        en: "Joy-Con drift-free, Mario Kart installed.",
+      },
+    },
+
+    {
+      name: "Premium Robot Vacuum",
+      price: "380 EUR",
+      imgSrc: "/images/hero/robot-vacuum.jpg",
+      category: {
+        es: "Hogar inteligente",
+        en: "Smart home",
+      },
+      description: {
+        es: "Base de autovaciado, filtros nuevos, factura disponible.",
+        en: "Self-emptying base, new filters, invoice provided.",
+      },
+    },
+    {
+      name: "Multifunction Kitchen Robot",
+      price: "950 EUR",
+      imgSrc: "/images/hero/kitchen-appliance.jpg",
+      category: {
+        es: "Electrodomésticos",
+        en: "Appliances",
+      },
+      description: {
+        es: "Pack completo, 1 año de uso, recetas guiadas activas.",
+        en: "Full kit, 1 year of use, guided recipes active.",
+      },
+    },
+    {
+      name: "Laser Robot Vacuum",
+      price: "340 EUR",
+      imgSrc: "/images/hero/robot-vacuum.jpg",
+      category: {
+        es: "Hogar inteligente",
+        en: "Smart home",
+      },
+      description: {
+        es: "Robot con láser, accesorios precintados.",
+        en: "Laser navigation, sealed accessories.",
+      },
+    },
+    {
+      name: "Urban Electric Bike",
+      price: "1 450 EUR",
+      imgSrc: "/images/hero/e-bike.jpg",
+      category: {
+        es: "Movilidad eléctrica",
+        en: "Electric mobility",
+      },
+      description: {
+        es: "Bicicleta eléctrica, revisión general recién hecha.",
+        en: "E-bike, general service just completed.",
+      },
+    },
+    {
+      name: "Advanced Electric Scooter",
+      price: "540 EUR",
+      imgSrc: "/images/hero/e-scooter.jpg",
+      category: {
+        es: "Movilidad eléctrica",
+        en: "Electric mobility",
+      },
+      description: {
+        es: "Autonomía 40 km, neumáticos reforzados, libro mantenimiento.",
+        en: "40 km range, reinforced tires, maintenance log.",
+      },
+    },
+    {
+      name: "E-reader With Stylus",
+      price: "320 EUR",
+      imgSrc: "/images/hero/e-reader.jpg",
+      category: {
+        es: "Lectura digital",
+        en: "E-readers",
+      },
+      description: {
+        es: "32 GB, lápiz premium, funda magnética negra.",
+        en: "32 GB, premium stylus, black magnetic cover.",
+      },
+    },
+    {
+      name: "Ergonomic Wireless Mouse",
+      price: "85 EUR",
+      imgSrc: "/images/hero/mouse.jpg",
+      category: {
+        es: "Periféricos",
+        en: "Peripherals",
+      },
+      description: {
+        es: "Caja y cable USB-C, clics silenciosos.",
+        en: "Box and USB-C cable, silent clicks.",
+      },
+    },
+    {
+      name: "Professional 27-inch QHD Monitor",
+      price: "410 EUR",
+      imgSrc: "/images/hero/monitor.jpg",
+      category: {
+        es: "Monitores",
+        en: "Monitors",
+      },
+      description: {
+        es: "Panel QHD calibrado, altura regulable, entrega inmediata.",
+        en: "Calibrated QHD panel, adjustable height, immediate delivery.",
+      },
+    },
+    {
+      name: "Vintage CRT TV 29-inch",
+      price: "190 EUR",
+      imgSrc: "/images/hero/tv.jpg",
+      category: {
+        es: "Televisores",
+        en: "TVs",
+      },
+      description: {
+        es: "Tele antigua restaurada, tubo CRT nítido, incluye mando original.",
+        en: "Restored vintage TV, sharp CRT tube, includes original remote.",
+      },
+    },
+    {
+      name: "ANC Over-Ear Headphones",
+      price: "260 EUR",
+      imgSrc: "/images/hero/headphones.jpg",
+      category: {
+        es: "Audio",
+        en: "Audio",
+      },
+      description: {
+        es: "Cancelación activa premium, garantía europea.",
+        en: "Premium ANC, EU warranty.",
+      },
+    },
+    {
+      name: "Living Room Bluetooth Speaker",
+      price: "220 EUR",
+      imgSrc: "/images/hero/speaker.jpg",
+      category: {
+        es: "Audio",
+        en: "Audio",
+      },
+      description: {
+        es: "Altavoz Bluetooth, sonido potente, cable AUX incluido.",
+        en: "Bluetooth speaker, powerful sound, AUX cable included.",
+      },
+    },
+  ];
+
+  const productData: CardProduct[] = baseProductData.map((item) => ({
+    name: item.name,
+    price: item.price,
+    imgSrc: item.imgSrc,
+    category: item.category[lang] ?? item.category.es,
+    description: item.description[lang] ?? item.description.es,
+  }));
+
+---
+
+<div class="animation-container">
+  <div class="scroller">
+      <div class="scroller-inner">
+        {productData.map((item) => (
+        <CardHero {...item} client:load />
+        ))}
+    </div>
+  </div>
+</div>
+
+<style>
+  .animation-container {
+    position: absolute;
+    perspective: 1200px;
+    /*inset: 0;*/
+  }
+
+  /* --- DESKTOP STYLES --- */
+  .scroller {
+    transform-style: preserve-3d;
+    transform: rotateX(45deg) rotateZ(-20deg) translateX(-600px) translateY(-300px);
+    width: 500%;
+    will-change: transform;
+  }
+
+  .scroller-inner {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 1.5rem;
+  }
+
+  @media (max-width: 640px) {
+    .scroller-inner {
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 0.75rem;
+    }
+  }
+
+  .card-animation {
+    animation: showAnimation 3s;
+    animation-iteration-count: 1;
+  }
+
+  @keyframes showAnimation {
+    from {
+      box-shadow: 0px 0px 5px #07d9c4;
+    }
+    to {
+      box-shadow: 0px 0px 2px #07d9c4;
+    }
+  }
+
+
+</style>
+
+<script>
+  import gsap from "gsap";
+  import { SplitText } from "gsap/SplitText";
+  import {ScrambleTextPlugin} from "gsap/ScrambleTextPlugin"
+
+  gsap.registerPlugin(SplitText);
+  gsap.registerPlugin(ScrambleTextPlugin);
+
+  gsap.config({ force3D: true });
+
+
+  document.addEventListener("DOMContentLoaded", () => {
+    const scrollerInner = document.querySelector(".scroller-inner");
+
+    if (!scrollerInner) return;
+
+    const isMobile = window.innerWidth <= 768;
+
+    const originalCards = Array.from(scrollerInner.children);
+    if (!originalCards.length) return;
+
+    const duplicateMultiplier = 3;
+
+    while (
+      scrollerInner.children.length < originalCards.length * duplicateMultiplier
+    ) {
+      originalCards.forEach((item) => {
+        const duplicatedItem = item.cloneNode(true) as HTMLElement;
+        duplicatedItem.setAttribute("aria-hidden", "true");
+        scrollerInner.appendChild(duplicatedItem);
+      });
+    }
+
+    const travelPercent = -100 / duplicateMultiplier;
+
+    gsap.to(scrollerInner, {
+      yPercent: travelPercent,
+      ease: "none",
+      /* Slightly longer run to match the expanded list */
+      duration: isMobile ? 90 : 170,
+      repeat: -1,
+    });
+
+    // Control cards
+
+    const cardCollection = document.getElementsByClassName("card")
+
+    animarCards(cardCollection)
+
+  });
+
+
+  function getRandomInt(max: number) {
+    return Math.floor(Math.random() * max);
+  }
+
+
+  async function TextScrambbleSelector(element: gsap.DOMTarget, content:string){
+
+    gsap.to(element, {
+      duration: 3,
+      scrambleText: {
+        text:content,
+        speed:0.2,
+        tweenLength:false
+      }
+    });
+
+    await new Promise(resolve => setTimeout(resolve, 3000));
+
+  }
+
+  const delay = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
+
+
+  function areRectsNear(rect1:any, rect2:any, minDist:any, maxDist:any) {
+    // Distancias horizontales y verticales entre los bordes
+    const dx = Math.max(0, Math.max(rect2.left - rect1.right, rect1.left - rect2.right));
+    const dy = Math.max(0, Math.max(rect2.top - rect1.bottom, rect1.top - rect2.bottom));
+
+    const distance = Math.max(dx, dy);
+
+
+    console.log(distance)
+
+    return distance >= minDist && distance <= maxDist;
+  }
+
+
+  async function animarCards(cards: HTMLCollectionOf<Element>) {
+    const cardsArray = Array.from(cards);
+    if (!cardsArray.length) return;
+
+    const title = document.querySelector("#hero-content");
+    if (!title){
+      return
+    }
+    const title_loc =  title?.getBoundingClientRect()
+
+
+    if (!title) return;
+
+    const minDistance = 55
+    const maxDistance = 65
+
+    await delay(1);
+
+    let  last_num = 0
+    while (true) {
+      const random = getRandomInt(cardsArray.length);
+
+      if (random == last_num){
+        continue
+      }
+      last_num = random
+      const item = cardsArray[random];
+      const rect = item.getBoundingClientRect();
+
+      const isNear = areRectsNear(title_loc, rect, minDistance, maxDistance);
+
+      if (!isNear){
+        await delay(10)
+        continue
+      }
+
+      const body = item.getElementsByClassName("body-card")[0];
+      if (!body) {
+        continue;
+      }
+
+      const parrafs = item.getElementsByTagName("p")
+
+      type TextInfo = {element:gsap.DOMTarget, content:string}
+      let texts:TextInfo[] = []
+
+      for (let parraf of parrafs){
+        texts.push({
+          element:parraf,
+          content:parraf.textContent,
+
+        })
+      }
+
+
+       item.classList.add("card-start")
+       await delay(500);
+       body.classList.add("visible-card")
+
+
+       texts.forEach(async (e)=>{
+          await TextScrambbleSelector(e.element,e.content)
+       })
+
+      await delay(8000);
+
+      // Thow endShow
+
+      item.classList.remove("card-start")
+      body.classList.remove("visible-card")
+
+
+
+      await delay(5000);
+
+    }
+  }
+</script>
