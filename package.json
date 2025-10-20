@@ -11,17 +11,11 @@
   },
   "dependencies": {
     "@astrojs/check": "^0.9.4",
-    "@astrojs/netlify": "^6.5.12",
-    "@astrojs/react": "^4.4.0",
     "@fontsource-variable/nunito": "^5.2.6",
     "@fontsource-variable/orbitron": "^5.2.6",
     "@tailwindcss/vite": "^4.1.8",
-    "@types/react": "^19.2.2",
-    "@types/react-dom": "^19.2.1",
     "astro": "^5.10.1",
     "gsap": "^3.13.0",
-    "react": "^19.2.0",
-    "react-dom": "^19.2.0",
     "sharp": "^0.32.5",
     "tailwindcss": "^4.1.8",
     "typescript": "^5.9.3"

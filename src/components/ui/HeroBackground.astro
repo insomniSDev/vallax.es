@@ -1,5 +1,5 @@
 ---
-  import CardHero from "./CardHero";
+  import CardHero from "./CardHero.astro";
   import type { Locale } from "../../i18n";
 
   import LaptopImage from "../../images/hero/laptop.jpg";
@@ -375,7 +375,7 @@
   <div class="scroller">
       <div class="scroller-inner">
         {productData.map((item) => (
-        <CardHero {...item} client:load />
+        <CardHero {...item}  />
         ))}
     </div>
   </div>
