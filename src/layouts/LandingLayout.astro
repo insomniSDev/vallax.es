@@ -18,6 +18,16 @@ const { lang, seo, navbar, footer, faq } = Astro.props as Props;
 <!doctype html>
 <html lang={lang}>
   <head>
+      <!-- Google tag (gtag.js) -->
+      <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17380125186"></script>
+      <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'AW-17380125186');
+      </script>
+
     <!-- Charset & Viewport -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -53,6 +63,5 @@ const { lang, seo, navbar, footer, faq } = Astro.props as Props;
     </main>
     <Footer t={footer} />
     <script src="../main.js"></script>
-
   </body>
 </html>
