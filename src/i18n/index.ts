@@ -1,7 +1,6 @@
 import type GettingStarted from "../components/sections/Getting-started.astro";
 
 export type Locale = "es" | "en";
-
 export interface Translation {
   locale: Locale;
   seo: {
@@ -178,7 +177,8 @@ export const translations: Record<Locale, Translation> = {
         {
           name: "Premium",
           price: "10 €/mes",
-          description: "Para usuarios que necesitan velocidad y flexibilidad completa.",
+          description:
+            "Para usuarios que necesitan velocidad y flexibilidad completa.",
           features: [
             "Hasta 12 alertas creadas",
             "6 alertas activas de forma simultánea",
@@ -201,7 +201,8 @@ export const translations: Record<Locale, Translation> = {
             "Soporte prioritario con especialista",
           ],
           ctaLabel: "Habla con nosotros",
-          ctaHref: "mailto:vallaxdev@gmail.com?subject=Plan%20personalizado%20Vallax",
+          ctaHref:
+            "mailto:vallaxdev@gmail.com?subject=Plan%20personalizado%20Vallax",
         },
       ],
     },
