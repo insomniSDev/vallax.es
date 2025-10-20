@@ -54,6 +54,7 @@ export interface Translation {
   gettingStarted: {
     title: string;
     description: string;
+    videoFallback: string;
     steps: {
       title: string;
       description: string;
@@ -112,6 +113,7 @@ export const translations: Record<Locale, Translation> = {
       title: "Cómo empezar",
       description:
         "Solo necesitas Telegram y un par de toques para poner a Vallax a trabajar.",
+      videoFallback: "Tu navegador no soporta el elemento de video.",
       steps: [
         {
           title: "Lanza la app",
@@ -288,6 +290,7 @@ export const translations: Record<Locale, Translation> = {
       title: "Getting started",
       description:
         "All you need is Telegram and a couple of taps to put Vallax to work.",
+      videoFallback: "Your browser does not support the video element.",
       steps: [
         {
           title: "Launch the app",

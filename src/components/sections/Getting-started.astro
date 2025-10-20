@@ -1,7 +1,8 @@
 ---
 import type { Translation } from "../../i18n";
 
-import { MuxPlayer } from "@mux/mux-player-astro";
+import howToStart from "../../vids/how-to-start.mp4";
+
 
 interface Props {
   t: Translation["gettingStarted"];
@@ -34,21 +35,20 @@ const { t } = Astro.props as Props;
             class="relative rounded-[28px] border border-white/12 bg-[#0C1014]/85 p-1 shadow-[0_20px_60px_rgba(12,16,20,0.45)]"
           >
 
-            <div class="overflow-hidden rounded-[18px] m-1">
-                <MuxPlayer
-                  playbackId="g01WjWjboePBKINVnsPi825x702grlsEZIXNYRTQ5vWQg"
-                  thumbnailTime={1},
-                  muted={true},
-                  loop={true}
-                  metadata={{
-                    video_title: 'Vallax, how to start',
-                  }}
+            <div class="overflow-hidden rounded-[18px] m-1 border border-white/12 ">
+                <video
+                  src={howToStart}
+                  autoplay
+                  muted
+                  loop
                   style={{
-                    borderRadius: "inherit"
+                    borderRadius: "inherit",
+                    width: "100%",
+                    height: "auto",
                   }}
-                  primaryColor="#07d9c4"
-
-                />
+                >
+                  {t.videoFallback}
+                </video>
 
             </div>
           </div>

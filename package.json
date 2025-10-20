@@ -15,7 +15,6 @@
     "@astrojs/react": "^4.4.0",
     "@fontsource-variable/nunito": "^5.2.6",
     "@fontsource-variable/orbitron": "^5.2.6",
-    "@mux/mux-player-astro": "^3.6.1",
     "@tailwindcss/vite": "^4.1.8",
     "@types/react": "^19.2.2",
     "@types/react-dom": "^19.2.1",

@@ -24,6 +24,5 @@ export default defineConfig({
     },
   },
 
-  adapter: netlify(),
   integrations: [react()],
 });
