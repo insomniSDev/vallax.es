@@ -71,19 +71,6 @@ const { t } = Astro.props as Props;
                   <p class="text-sm leading-6 text-white/65 md:text-base md:leading-7">
                     {step.description}
                   </p>
-
-                  {step.ctaLabel && (
-                    <a
-                      onclick="trackClick('about-open-bot')"
-                      href="https://t.me/vallaxbot?start=about_step"
-                      target="_blank"
-                      rel="noreferrer"
-                      class="inline-flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.24em] text-primary transition-colors hover:text-primary/80"
-                    >
-                      <span class="h-1.5 w-1.5 rounded-full bg-primary" />
-                      {step.ctaLabel}
-                    </a>
-                  )}
                 </div>
               </li>
             ))
