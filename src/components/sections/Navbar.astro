@@ -109,7 +109,7 @@ const visibleLinks = links.filter((link) => link.href !== "#pricing");
       }
 
       <a
-        onclick="window.closeMobileMenu(); trackClick('nav-mobile-primary')"
+        onclick="window.closeMobileMenu(); trackClick('nav-mobile-primary'); return gtag_report_conversion('https://t.me/VallaxBot')"
         href="https://t.me/vallaxbot?start=nav_cta"
         target="_blank"
         class="px-[6%] py-4 border-t border-white/10 text-primary transition-colors hover:text-primary/80"

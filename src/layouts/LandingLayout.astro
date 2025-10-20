@@ -28,6 +28,22 @@ const { lang, seo, navbar, footer, faq } = Astro.props as Props;
         gtag('config', 'AW-17380125186');
       </script>
 
+      <script>
+      function gtag_report_conversion(url:string) {
+        var callback = function () {
+          if (typeof(url) != 'undefined') {
+            window.location = url;
+          }
+        };
+        gtag('event', 'conversion', {
+            'send_to': 'AW-17380125186/mEEXCPnctbAbEILUvt9A',
+            'event_callback': callback
+        });
+        return false;
+      }
+      </script>
+
+
     <!-- Charset & Viewport -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
