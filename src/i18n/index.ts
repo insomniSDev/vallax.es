@@ -80,9 +80,9 @@ export const translations: Record<Locale, Translation> = {
     locale: "es",
     seo: {
       title:
-        "Alertas instantáneas de Wallapop, Vinted, Milanuncios y Todocoleccion en Telegram | Vallax",
+        "Vallax — Bot de alertas para plataformas de segunda mano (Wallapop, Vinted, Milanuncios...)",
       description:
-        "Automatiza la búsqueda de chollos con Vallax. Configura filtros personalizados y recibe notificaciones al momento desde Telegram.",
+        "Vallax es un bot que envía alertas instantáneas de nuevos anuncios de segunda mano en Wallapop, Vinted, Milanuncios y más. Ve las nuevas ofertas antes que nadie.",
     },
     navbar: {
       links: {
@@ -259,7 +259,7 @@ export const translations: Record<Locale, Translation> = {
       title:
         "Vallax — Alert Bot for Second-Hand Marketplaces (Wallapop, Vinted, Milanuncios...)",
       description:
-        "Vallax is a Telegram bot that sends instant alerts for new second-hand listings on Wallapop, Vinted, Milanuncios and more. See new deals before anyone else.",
+        "Vallax is a bot that sends instant alerts for new second-hand listings on Wallapop, Vinted, Milanuncios and more. See new deals before anyone else.",
     },
     navbar: {
       links: {
