@@ -1,2 +1,21 @@
+---
+---
 
-<meta http-equiv="refresh" content="0;url=/es/" />
+<html lang="en">
+  <head>
+    <style>
+      html, body {
+        margin: 0;
+        height: 100%;
+        background: #0c1014;
+      }
+    </style>
+    <script>
+        const supported = ['es', 'en'];
+        const browser = navigator.languages?.map(l => l.slice(0, 2)) || [navigator.language.slice(0, 2)];
+        const locale = browser.find(l => supported.includes(l)) || 'es';
+        location.replace(`/${locale}/`);
+    </script>
+  </head>
+  <body></body>
+</html>
